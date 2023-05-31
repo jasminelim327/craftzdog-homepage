@@ -15,7 +15,7 @@ import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
+import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
 import Image from 'next/image'
 
 const ProfileImage = chakra(Image, {
@@ -72,7 +72,8 @@ const Home = () => (
 
       <Section delay={0.1}>
         <Heading as="h3" variant="section-title">
-          Work
+          INTRODUCTION
+
         </Heading>
         <Paragraph>
          Hello, I am Jasmine and I am currently a Penultimate year student
@@ -85,23 +86,49 @@ const Home = () => (
           revolutionize the way we approach global issues and I am excited to
           connect with like-minded professionals who share my vision and explore
           how we can make a positive impact on the world together.
+          <br></br>
+          <br></br>
+
         </Paragraph>
         <Box align="center" my={4}>
-          <NextLink href="/works" passHref scroll={false}>
+          <NextLink href="/works" passHref scroll={false} >
             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-              My portfolio
+              Projects <br />
             </Button>
           </NextLink>
+          &nbsp;
+          &nbsp;
+
+          <NextLink href="/works" passHref scroll={false}>
+            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+             Experience <br />
+            </Button>
+
+            
+          </NextLink>
+          &nbsp;
+          &nbsp;
+
+          <NextLink href="/works" passHref scroll={false}>
+            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+              Resume <br />
+            </Button>
+
+            
+          </NextLink>
+          <br></br>
+        
         </Box>
+        
       </Section>
 
-      <Section delay={0.2}>
+      {/* <Section delay={0.2}>
         <Heading as="h3" variant="section-title">
-          Bio
+          PAST EXPERIENCE | PROJECTS | HACKATHON 
         </Heading>
         <BioSection>
-          <BioYear>1984</BioYear>
-          Born in Osaka (大阪), Japan.
+          <BioYear>Jun - Dec 2022</BioYear><br></br>
+          <b>Cyber Strategy Intern</b>
         </BioSection>
         <BioSection>
           <BioYear>2010</BioYear>
@@ -117,13 +144,14 @@ const Home = () => (
           <BioYear>2012 to present</BioYear>
           Working as a freelancer
         </BioSection>
-      </Section>
+      </Section> */}
 
       
+<br></br>
 
-      <Section delay={0.3}>
+      <Section delay={0.3} >
         <Heading as="h3" variant="section-title">
-          On the web
+          GET IN TOUCH !
         </Heading>
         <List>
           <ListItem>
@@ -146,6 +174,18 @@ const Home = () => (
                 leftIcon={<IoLogoInstagram />}
               >
                 @jasmine.limmm
+              </Button>
+            </Link>
+          </ListItem>
+
+          <ListItem>
+            <Link href="https://www.linkedin.com/in/jasmine-lim-jia-yi/" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<IoLogoLinkedin />}
+              >
+                Jasmine Lim
               </Button>
             </Link>
           </ListItem>
