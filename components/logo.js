@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Text, useColorModeValue } from '@chakra-ui/react'
 import FootprintIcon from './icons/footprint'
 import styled from '@emotion/styled'
-import Heart from './icons/heart'
+// import Heart from './icons/heart'
 
 const LogoBox = styled.span`
   font-weight: bold;
