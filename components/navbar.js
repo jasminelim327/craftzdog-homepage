@@ -12,11 +12,13 @@ import {
   MenuList,
   MenuButton,
   IconButton,
-  useColorModeValue
+  useColorModeValue,
+  Spacer
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
+import { AiFillLinkedin } from "react-icons/ai";
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
@@ -62,19 +64,27 @@ const Navbar = props => {
             <Logo />
           </Heading>
         </Flex>
-
         <Stack
           direction={{ base: 'column', md: 'row' }}
           display={{ base: 'none', md: 'flex' }}
           width={{ base: 'full', md: 'auto' }}
-          alignItems="center"
+          alignItems="left"
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/works" path={path}>
-            <b>WORKS</b>
+
+          <LinkItem
+            href="https://linkedin.com/in/jasmine-lim-jia-yi"
+            path={path}
+            display="inline-flex"
+            alignItems="center"
+            style={{ gap: 4 }}
+            pl={2}
+          >
+            <AiFillLinkedin />
+            <b>Linkedin</b>
           </LinkItem>
-          
+
           <LinkItem
             target="_blank"
             href="https://github.com/jasminelim327"
@@ -85,10 +95,10 @@ const Navbar = props => {
             pl={2}
           >
             <IoLogoGithub />
-            <b>SOURCE</b>
+            <b>Github</b>
           </LinkItem>
+          
         </Stack>
-
         <Box flex={1} align="right">
           <ThemeToggleButton />
 
