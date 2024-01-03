@@ -19,10 +19,12 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.15",
     "framer-motion": "^7.10.3",
+    "install": "^0.13.0",
     "next": "^12.2.5",
+    "npm": "^10.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.11.0",
+    "react-icons": "^4.12.0",
     "three": "^0.143.0"
   },
   "devDependencies": {

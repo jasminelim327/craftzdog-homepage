@@ -11,8 +11,16 @@ import {
   chakra,
   Tag,
   TagLeftIcon,
-  TagLabel
+  TagLabel,
+  HStack,
+  TagRightIcon,
+  Spacer,
+  Flex
 } from '@chakra-ui/react'
+
+import { BiLogoSpringBoot } from 'react-icons/bi'
+import { HiOutlinePresentationChartBar } from 'react-icons/hi2'
+
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
 import Layout from '../components/layouts/article'
@@ -21,8 +29,18 @@ import {
   IoLogoInstagram,
   IoLogoGithub,
   IoLogoLinkedin,
-  IoLogoVue
+  IoLogoVue,
+  IoLogoFirebase,
+  IoLogoNodejs,
+  IoApps,
+  IoRepeatOutline,
+  IoCodeWorking,
+  IoCalendarOutline,
+  IoGolfOutline,
+  IoReader
 } from 'react-icons/io5'
+
+import { FaJava } from 'react-icons/fa'
 import Image from 'next/image'
 import { BioSection, BioYear } from '../components/bio'
 
@@ -49,7 +67,7 @@ const Home = () => (
           <Heading as="h2" variant="page-title">
             Jasmine Lim Jia Yi
           </Heading>
-          <p>Tech Enthusiast / Photographer / Developer </p>
+          <p>Tech Enthusiast / Developer </p>
         </Box>
         <Box
           flexShrink={0}
@@ -85,18 +103,12 @@ const Home = () => (
         <Paragraph>
           Hello, I am Jasmine and I am currently a Final year student majoring
           in Information Systems (Digital Cloud Solutioning and Financial
-          Technology) and Finance. As an INTP, I am passionate about using my
-          analytical and problem-solving skills to tackle complex issues{' '}
+          Technology) and Finance.I am passionate about using my analytical and
+          problem-solving skills to tackle complex issues! <br></br>
           <br></br>
-          <br></br>I believe that technology has the potential to revolutionize
-          the way we approach global issues and I am excited to connect with
-          like-minded professionals who share my vision and explore how we can
-          make a positive impact on the world together.
-          <br></br>
-          <br></br>
-          Let's connect!
+          Let&apos;s connect!
         </Paragraph>
-        <Box align="center" my={6}>
+        {/* <Box align="center" my={6}>
           <NextLink href="/works" passHref scroll={false}>
             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
               Experience <br />
@@ -110,64 +122,303 @@ const Home = () => (
           </NextLink>
           &nbsp; &nbsp;
           <br></br>
-        </Box>
+        </Box> */}
       </Section>
+
       <Section delay={0.2}>
         <Heading as="h5" variant="section-title">
           PROFESSIONAL EXPERIENCE
         </Heading>
+        <br></br>
+        <Box display={{ md: 'flex' }}>
+          <Box px={1} mx={2}>
+            <ProfileImage
+              src="/images/vibefam.jpg"
+              borderRadius="full"
+              width="120px"
+              height="120px"
+            />
+          </Box>
+          <BioSection>
+            <Box flexGrow={1}>
+              <p />
+              <BioYear>Sep 2023 - Dec 2023</BioYear>
+              <br></br>
+              <i>Software Engineering Intern @ Vibefam </i>
+              <br></br>
+              <br></br>I work on enhancements and new features that elevate user
+              experience on the Vibefam platform, while emphasizing a
+              feature-rich and responsive design that could cater to diverse
+              user needs.
+            </Box>
+            <br></br>
 
-        <BioSection>
-          <BioYear>Sep 2023 - Now</BioYear>
-          <br></br>
-          <i>Software Engineering Intern</i>
-          <br></br>
-          <br></br>I am responsible for elevating the user experience on the
-          Vibefam platform, emphasizing a feature-rich and responsive design
-          that could cater to diverse user needs.
-          <br></br>
-          <Tag size="lg" variant="subtle" borderRadius="full">
-            <TagLeftIcon boxSize="12px" as={IoLogoVue} />
-            <TagLabel>Vue.js</TagLabel>
-          </Tag>
-          <Tag size="lg" variant="subtle" borderRadius="full">
-            <TagLeftIcon boxSize="12px" as={IoLogoVue} />
-            <TagLabel>Vue.js</TagLabel>
-          </Tag>
-        </BioSection>
+            <b> Technical Stacks</b>
+            <br></br>
+            <br></br>
+            <HStack spacing={2}>
+              {/* Vue.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="green"
+              >
+                <TagLeftIcon boxSize="15px" as={IoLogoVue} />
+                <TagLabel> xxxxxxx Vue</TagLabel>
+              </Tag>
 
-        <BioSection>
-          <BioYear>Jun - Dec 2022</BioYear>
-          <br></br>
-          <i>Cyber Strategy Intern</i>
-          <p></p>
+              {/* Firebase Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="yellow"
+              >
+                <TagLeftIcon boxSize="15px" as={IoLogoFirebase} />
+                <TagLabel>xxxxxxx Firebase</TagLabel>
+              </Tag>
 
-          <br></br>
-          <br></br>
-        </BioSection>
+              {/* Node.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="red"
+              >
+                <TagLeftIcon boxSize="15px" as={IoLogoNodejs} />
+                <TagLabel> xxxxxxx Node JS</TagLabel>
+              </Tag>
+            </HStack>
+            <br></br>
+            <b> Skills Developed</b>
+            <br></br>
+            <br></br>
+            <HStack spacing={2}>
+              {/* Vue.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={IoApps} />
+                <TagLabel> xxxxxxx Full Stack Web Development</TagLabel>
+              </Tag>
+              Firebase Tag
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={IoRepeatOutline} />
+                <TagLabel>xxxxxxx Agile </TagLabel>
+              </Tag>
+              {/* Node.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={IoCodeWorking} />
+                <TagLabel> xxxxxxx Software Testing </TagLabel>
+              </Tag>
+              {/* Node.js Tag */}
+            </HStack>
+            <br></br>
+          </BioSection>
+        </Box>
 
-        <BioSection>
-          <BioYear>2010</BioYear>
-          Completed the Master&apos;s Program in the Graduate School of
-          Information Science at Nara Institute of Science and Technology
-          (奈良先端科学技術大学院大学情報科学研究科修士課程)
-          <br></br>
-          <br></br>
-        </BioSection>
+        <br></br>
+        <Box display={{ md: 'flex' }}>
+          <Box px={1} mx={2}>
+            <ProfileImage
+              src="/images/creditsuisse.jpg"
+              borderRadius="full"
+              width="200px"
+              height="200px"
+            />
+          </Box>
 
-        <BioSection>
-          <BioYear>2010</BioYear>
-          Worked at Yahoo! Japan (ヤフー株式会社入社)
-          <br></br>
-          <br></br>
-        </BioSection>
+          <BioSection>
+            <p />
+            <BioYear>Jun - Dec 2022</BioYear>
+            <br></br>
+            <i>Apprentice @ Credit Suisse INSPIRE </i>
+            <p></p>
+            <br></br>I developed a full-stack web application that allow users
+            to express and discuss about unconsious biasness in the workplace
+            with the guidance from Software Engineers at Credit Suisse. The
+            features includes a discussion platform for multiple users, profile
+            customisation and subscription to tags.
+            <br></br>
+            <br></br>
+            <b> Technical Stacks</b>
+            <br></br>
+            <br></br>
+            <HStack spacing={2}>
+              {/* Vue.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="blue"
+              >
+                <TagLeftIcon boxSize="15px" as={IoLogoVue} />
+                <TagLabel> xxxxxxx React</TagLabel>
+              </Tag>
 
-        <BioSection>
-          <BioYear>2012 to present</BioYear>
-          Working as a freelancer
-          <br></br>
-          <br></br>
-        </BioSection>
+              {/* Firebase Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="yellow"
+              >
+                <TagLeftIcon boxSize="15px" as={IoLogoFirebase} />
+                <TagLabel>xxxxxxx Firebase</TagLabel>
+              </Tag>
+
+              {/* Node.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="red"
+              >
+                <TagLeftIcon boxSize="15px" as={IoLogoNodejs} />
+                <TagLabel> xxxxxxx Node JS</TagLabel>
+              </Tag>
+
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="purple"
+              >
+                <TagLeftIcon boxSize="15px" as={FaJava} />
+                <TagLabel> xxxxxxx Java</TagLabel>
+              </Tag>
+            </HStack>
+            <HStack>
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="green"
+                mt={2}
+              >
+                <TagLeftIcon boxSize="15px" as={BiLogoSpringBoot} />
+                <TagLabel> xxxxxxx Springboot</TagLabel>
+              </Tag>
+            </HStack>
+            <br></br>
+            <b> Skills Developed</b>
+            <br></br>
+            <br></br>
+            <HStack spacing={2}>
+              {/* Vue.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={IoApps} />
+                <TagLabel> xxxxxxx Full Stack Web Development</TagLabel>
+              </Tag>
+              Firebase Tag
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={IoRepeatOutline} />
+                <TagLabel>xxxxxxx SDLC </TagLabel>
+              </Tag>
+              {/* Node.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={IoCodeWorking} />
+                <TagLabel> xxxxxxx Software Testing </TagLabel>
+              </Tag>
+              {/* Node.js Tag */}
+            </HStack>
+            <br></br>
+          </BioSection>
+        </Box>
+        <br></br>
+
+        <Box display={{ md: 'flex' }}>
+          <Box px={1} mx={2}>
+            <ProfileImage
+              src="/images/ensign.jpg"
+              borderRadius="full"
+              width="100px"
+              height="100px"
+            />
+          </Box>
+          <BioSection>
+            <p></p>
+            <BioYear>Jun - Dec 2022</BioYear>
+            <br></br>
+            <i>Cyber Strategy Intern @ Ensign Infosecurity</i>
+            <br></br>
+            <br></br>I work on various proposals, in-house process enhancement
+            and reaserch on technical solutions that enhance client's
+            cybersecurity posture.
+            <br></br>
+            <br></br>
+            <b>Skills Developed</b>
+            <br></br>
+            <br></br>
+            <HStack spacing={2}>
+              {/* Vue.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon
+                  boxSize="15px"
+                  as={HiOutlinePresentationChartBar}
+                />
+                <TagLabel> xxxxxxx Consulting</TagLabel>
+              </Tag>
+
+              {/* Firebase Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={IoGolfOutline} />
+                <TagLabel>xxxxxxx Research</TagLabel>
+              </Tag>
+
+              {/* Node.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={IoReader} />
+                <TagLabel> xxxxxxx Presentation</TagLabel>
+              </Tag>
+            </HStack>
+            <br></br>
+          </BioSection>
+        </Box>
       </Section>
       <br></br>
 
