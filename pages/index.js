@@ -1,4 +1,4 @@
-import NextLink from 'next/link'
+/* eslint-disable react/no-unescaped-entities */
 import {
   Link,
   Container,
@@ -13,15 +13,13 @@ import {
   TagLeftIcon,
   TagLabel,
   HStack,
-  TagRightIcon,
-  Spacer,
-  Flex
 } from '@chakra-ui/react'
+import { TbBrandNextjs } from "react-icons/tb";
+import { SiPostgresql, SiTypescript, SiGraphql, SiNestjs} from "react-icons/si";
+
 
 import { BiLogoSpringBoot } from 'react-icons/bi'
 import { HiOutlinePresentationChartBar } from 'react-icons/hi2'
-
-import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
@@ -35,8 +33,6 @@ import {
   IoApps,
   IoRepeatOutline,
   IoCodeWorking,
-  IoCalendarOutline,
-  IoGolfOutline,
   IoReader
 } from 'react-icons/io5'
 
@@ -133,6 +129,131 @@ const Home = () => (
         <Box display={{ md: 'flex' }}>
           <Box px={1} mx={2}>
             <ProfileImage
+              src="/images/onloop.jpeg"
+              borderRadius="full"
+              width="120px"
+              height="120px"
+            />
+          </Box>
+          <BioSection>
+            <Box flexGrow={1}>
+              <p />
+              <BioYear>Jan 2024 - Now</BioYear>
+              <br></br>
+              <i>Software Engineering Intern @ Onloop </i>
+              <br></br>
+              <br></br>I work on new features such as Slack Integration and Notifications with strong emphasis on responsiveness across different devices, that elevate user
+              experience on the Onloop mobile and web platform by collaborating with software engineers and product manager
+            </Box>
+            <br></br>
+
+            <b> Technical Stacks</b>
+            <br></br>
+            <br></br>
+            <HStack spacing={2}>
+              {/* Vue.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="green"
+              >
+                <TagLeftIcon boxSize="15px" as={TbBrandNextjs} />
+                <TagLabel> xxxxxxx NextJS</TagLabel>
+              </Tag>
+
+              {/* Firebase Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="yellow"
+              >
+                <TagLeftIcon boxSize="15px" as={SiPostgresql} />
+                <TagLabel>xxxxxxx PostgreSQL</TagLabel>
+              </Tag>
+
+              {/* Node.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="red"
+              >
+                <TagLeftIcon boxSize="15px" as={SiTypescript} />
+                <TagLabel> xxxxxxx Typescript</TagLabel>
+              </Tag>
+
+               {/* Node.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="blue"
+              >
+                <TagLeftIcon boxSize="15px" as={SiGraphql} />
+                <TagLabel> xxxxxxx GraphQL</TagLabel>
+              </Tag>
+
+            </HStack>
+            <HStack spacing={2} >
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="purple"
+                mt={2}
+              >
+                <TagLeftIcon boxSize="15px" as={SiNestjs} />
+                <TagLabel> xxxxxxx Nestjs</TagLabel>
+              </Tag>
+              
+            </HStack>
+            <br></br>
+            <b> Skills Developed</b>
+            <br></br>
+            <br></br>
+            <HStack spacing={2}>
+              {/* Vue.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={IoApps} />
+                <TagLabel> xxxxxxx Full Stack Web Development</TagLabel>
+              </Tag>
+              Firebase Tag
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={IoRepeatOutline} />
+                <TagLabel>xxxxxxx Agile </TagLabel>
+              </Tag>
+              {/* Node.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={IoCodeWorking} />
+                <TagLabel> xxxxxxx Collaboration </TagLabel>
+              </Tag>
+              {/* Node.js Tag */}
+            </HStack>
+            <br></br>
+          </BioSection>
+        </Box>
+
+        <br></br>
+        <Box display={{ md: 'flex' }}>
+          <Box px={1} mx={2}>
+            <ProfileImage
               src="/images/vibefam.jpg"
               borderRadius="full"
               width="120px"
@@ -165,6 +286,7 @@ const Home = () => (
                 colorScheme="green"
               >
                 <TagLeftIcon boxSize="15px" as={IoLogoVue} />
+                
                 <TagLabel> xxxxxxx Vue</TagLabel>
               </Tag>
 
