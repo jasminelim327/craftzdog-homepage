@@ -24,6 +24,7 @@ import Paragraph from '../components/paragraph'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import {
+  IoGolfOutline,
   IoLogoInstagram,
   IoLogoGithub,
   IoLogoLinkedin,
