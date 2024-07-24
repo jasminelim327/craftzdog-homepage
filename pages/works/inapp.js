@@ -12,21 +12,25 @@ import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
 const Work = () => (
-  <Layout title="Inkdrop">
+  <Layout title="In-App Feedback Solution">
     <Container>
       <Title>
-        Inkdrop <Badge>2016-</Badge>
+      In-App Feedback Solution <Badge>2024</Badge>
       </Title>
       <P>
-        A Markdown note-taking app with 100+ plugins, cross-platform and
-        encrypted data sync support. The life-time revenue is more than $300k.
+      Web applications often require additional components to improve functionality and user experience. However, integrating these components can be challenging and time-consuming. There is a need for a solution that simplifies this process while providing valuable insights through comprehensive metrics.<br></br>
+      <br></br>
+      The SDK that my team has developed addresses this need by offering pre-built components that can be seamlessly integrated into any web application. It collects metrics to evaluate the performance and user experience, categorized into Effectiveness, Efficiency, and Satisfaction.
+
       </P>
       <List ml={4} my={4}>
         <ListItem>
-          <Meta>Website</Meta>
-          <Link href="https://www.inkdrop.app/">
-            https://www.inkdrop.app/ <ExternalLinkIcon mx="2px" />
-          </Link>
+          <Meta>Technology Stack</Meta> <span>Frontend: React, JavaScript
+Backend: Node.js
+Database: AzureSQL</span>
+
+
+
         </ListItem>
         <ListItem>
           <Meta>Platform</Meta>
@@ -35,6 +39,16 @@ const Work = () => (
         <ListItem>
           <Meta>Stack</Meta>
           <span>NodeJS, Electron, React Native</span>
+
+          Key Features:
+Ease of Integration: The SDK components can be quickly added to existing web applications, minimizing development time.
+Comprehensive Metrics: Detailed insights into application performance and user satisfaction.
+Scalable and Robust: Built with modern technologies to ensure scalability and reliability.
+Impact:
+Enhanced application functionality with minimal integration effort.
+Improved decision-making through actionable metrics.
+Increased user satisfaction and efficiency.
+
         </ListItem>
         <ListItem>
           <Meta>Blogpost</Meta>

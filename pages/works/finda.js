@@ -15,20 +15,24 @@ const Work = () => (
   <Layout title="Margelo">
     <Container>
       <Title>
-        Margelo <Badge>2022</Badge>
+      finda <Badge>2022</Badge>
       </Title>
       <P>
-        The corporate website for the elite app development and contracting
-        agency based in Vienna, Austria.
+      Finda, an investment tool aimed at enhancing financial literacy through gamified and experiential learning. Built during the Ellipsis x Goldman Sachs x AWS Hackathon 2021, the project aimed to offer access to financial inclusion.
       </P>
       <P>
-        <Link href="https://twitter.com/mrousavy" target="_blank">
-          Marc Rousavy <ExternalLinkIcon mx="2px" />
-        </Link>
-        , the founder of the agency, is my friend from the React Native
-        community. I coded the design they&apos;ve sent me, which consists of
-        parallax effects inspired by Apple. I&apos;ve published a video showing
-        the process of building the website as a tutorial on YouTube.
+      Source Code: Finda on GitHub
+Achievements:
+Semi-Finalist among 78 teams at the Ellipsis x Goldman Sachs x AWS Hackathon 2021.
+Tech Stack:
+Frontend: React
+Backend: AWS Cloud Services
+Key Contributions:
+Led the design and solutioning, focusing on responsive design and personalized content.
+Collaborated on Cloud Services Architecture, achieving a 20% faster time to market compared to traditional local server methods.
+Impact:
+Increased user knowledge and confidence in financial investments.
+Provided a scalable and efficient platform for financial education.
       </P>
 
       <List ml={4} my={4}>

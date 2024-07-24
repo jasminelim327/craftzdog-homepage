@@ -15,19 +15,25 @@ import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 
 const Work = () => (
-  <Layout title="walknote">
+  <Layout title="Crissy">
     <Container>
       <Title>
-        walknote <Badge>2011-2016</Badge>
+        Crissy <Badge>2023</Badge>
       </Title>
       <P>
-        walknote recommends new music you may like based on your music
-        preferences by recognizing your favorite songs stored in your device.
-        You can listen to recommended music just like a radio!
+      Crissy, a platform that allows users to post questions related to workplace issues, bias awareness, diversity, and inclusion. Users receive answers from experts in the field, helping them gain insights, different perspectives, and expert advice on addressing specific challenges or situations in the workplace.
       </P>
+      <br></br><br></br>
       <P>
-        This service has been closed. Thank you for over 130,000 registered
-        users!
+      Source Code: Crissy on GitHub
+Slides: Crissy Presentation
+Tech Stack:
+Frontend: React, TypeScript
+Backend: Firebase
+Impact:
+Provided a platform for open discussions on workplace bias and diversity.
+Facilitated access to expert advice, promoting a more inclusive work environment.
+
       </P>
       <List ml={4} my={4}>
         <ListItem>
@@ -51,7 +57,7 @@ const Work = () => (
         <Center>Media coverage</Center>
       </Heading>
 
-      <UnorderedList my={4}>
+      {/* <UnorderedList my={4}>
         <ListItem>
           <Link href="http://renewal49.hateblo.jp/entry/20120710/1341925681">
             <Badge mr={2}>リニューアル式</Badge>
@@ -84,7 +90,7 @@ const Work = () => (
           </Link>
           <ExternalLinkIcon mx="2px" />
         </ListItem>
-      </UnorderedList>
+      </UnorderedList> */}
 
       <SimpleGrid columns={2} gap={2}>
         <WorkImage src="/images/works/walknote_01.png" alt="walknote" />

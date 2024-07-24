@@ -1,3 +1,4 @@
+
 import {
   Container,
   Badge,
@@ -12,27 +13,28 @@ import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 
 const Work = () => (
-  <Layout title="mode.tokyo">
+  <Layout title="daily">
     <Container>
       <Title>
-        mode.tokyo <Badge>2016</Badge>
+        daily <Badge>2022</Badge>
       </Title>
-      <P>The mode magazine for understanding to personally enjoy Japan.</P>
-      <P>
-        It is one of the projects launched at{' '}
-        <Link href="https://innolab.jp/" target="_blank">
-          Open Innovation Lab (電通イノラボ) <ExternalLinkIcon mx="2px" />
-        </Link>
-        , aiming to visualize the impact of media contents on the visit of
-        foreign high-intellect class to Japan, who are highly interested in
-        Japanese culture. I joined the project to build its mobile app for iOS
-        where you can read free articles of the magazine.
+      <P>a Flutter-based mobile application aimed at enhancing the accessibility of public donations for non-profit organizations (NPOs). The project, built during the Google x Women in Tech Ignite Program, integrates key features to streamline the donation process and foster a sense of community.
       </P>
       <P>
-        電子版としてiOSアプリを担当。日英仏対応。
-        きゅんくんやラブリーサマーちゃんなどを誌面で取り上げている。
-        本雑誌はISIDイノラボ様と角川アスキー総合研究所様の共同プロジェクトです。
-      </P>
+      Source Code: Project Daily App on GitHub
+Slides: Project Daily App Presentation
+Achievements:
+Finalist among 25 teams in the Google x Women in Tech Ignite Program – Product Sprint.
+Tech Stack:
+Mobile Framework: Flutter
+Key Features:
+Payment Channel: Integrated seamless payment processing for donations.
+Community Feed: Created a platform for NPOs to share updates and engage with donors.
+Rewards System: Implemented a gamified rewards system to incentivize donations.
+Impact:
+Increased Donations: Enhanced donation accessibility, driving higher contributions.
+Community Engagement: Fostered a stronger sense of community among donors and NPOs.
+Innovative Approach: Introduced a gamified method to charitable giving, making it more engaging and rewarding.</P>
 
       <List ml={4} my={4}>
         <ListItem>

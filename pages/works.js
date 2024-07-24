@@ -10,9 +10,9 @@ import thumbMenkiki from '../public/images/works/menkiki_eyecatch.png'
 import thumbMargelo from '../public/images/works/margelo_eyecatch.png'
 import thumbModeTokyo from '../public/images/works/modetokyo_eyecatch.png'
 import thumbStyly from '../public/images/works/styly_eyecatch.png'
-import thumbPichu2 from '../public/images/works/pichu2_eyecatch.png'
-import thumbFreeDBTagger from '../public/images/works/freedbtagger_eyecatch.png'
-import thumbAmembo from '../public/images/works/amembo_eyecatch.png'
+// import thumbPichu2 from '../public/images/works/pichu2_eyecatch.png'
+// import thumbFreeDBTagger from '../public/images/works/freedbtagger_eyecatch.png'
+// import thumbAmembo from '../public/images/works/amembo_eyecatch.png'
 
 const Works = () => (
   <Layout title="Works">
@@ -23,71 +23,67 @@ const Works = () => (
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section>
-          <WorkGridItem id="inkdrop" title="Inkdrop" thumbnail={thumbInkdrop}>
-            A Markdown note-taking app with 100+ plugins, cross-platform and
-            encrypted data sync support
+          <WorkGridItem id="inapp" title="In-App Feedback Solution" thumbnail={thumbInkdrop}>
+            SDK designed to provide easily integrable feedback collection and tracking components for existing web and mobile applications 
           </WorkGridItem>
         </Section>
         <Section>
           <WorkGridItem
-            id="walknote"
-            title="walknote"
+            id="crissy"
+            title="Crissy"
             thumbnail={thumbWalknote}
           >
-            Music recommendation app for iOS
+            A platform that allows users to post questions related to workplace issues, bias awareness, diversity, and inclusion
           </WorkGridItem>
         </Section>
 
         <Section delay={0.1}>
           <WorkGridItem
-            id="fourpainters"
-            title="The four painters"
+            id="shopmytee"
+            title="ShopMyTee"
             thumbnail={thumbFourPainters}
           >
-            A video work generated with deep learning, imitating famous four
-            painters like Van Gogh
+           An e-commerce platform, built and deployed using Amazon Web Services (AWS)
           </WorkGridItem>
         </Section>
         <Section delay={0.1}>
-          <WorkGridItem id="menkiki" thumbnail={thumbMenkiki} title="Menkiki">
-            An app that suggests ramen(noodle) shops based on a given photo of
-            the ramen you want to eat
+          <WorkGridItem id="limkopi" thumbnail={thumbMenkiki} title="LimKopi">
+          A mobile application designed to bridge the cross-generational gap and empower the silver generation.
           </WorkGridItem>
         </Section>
       </SimpleGrid>
 
-      <Section delay={0.2}>
+      {/* <Section delay={0.2}>
         <Divider my={6} />
 
         <Heading as="h3" fontSize={20} mb={4}>
-          Collaborations
+          Hackathons
         </Heading>
-      </Section>
+      </Section> */}
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section delay={0.3}>
-          <WorkGridItem id="margelo" thumbnail={thumbMargelo} title="Margelo">
-            A website of the elite app development and contracting agency based
-            in Austria
+          <WorkGridItem id="finda" thumbnail={thumbMargelo} title="Finda">
+          An investment tool aimed at enhancing financial literacy through gamified and experiential learning
           </WorkGridItem>
         </Section>
         <Section delay={0.3}>
           <WorkGridItem
-            id="modetokyo"
+            id="daily"
             thumbnail={thumbModeTokyo}
-            title="mode.tokyo"
+            title="daily"
           >
-            The mode magazine for understanding to personally enjoy Japan
+            A Flutter-based mobile application aimed at enhancing the accessibility of public donations for non-profit organizations (NPOs)
           </WorkGridItem>
         </Section>
         <Section delay={0.3}>
-          <WorkGridItem id="styly" thumbnail={thumbStyly} title="Styly">
-            A VR Creative tools for fashion brands
+          <WorkGridItem id="buddy" thumbnail={thumbStyly} title="buddy">
+           An AI-powered journaling app designed to help users analyze their feelings and provide personalized recommendations to improve their well-being
           </WorkGridItem>
         </Section>
       </SimpleGrid>
 
-      <Section delay={0.4}>
+      {/* <Section delay={0.4}>
         <Divider my={6} />
 
         <Heading as="h3" fontSize={20} mb={4}>
@@ -109,14 +105,14 @@ const Works = () => (
           >
             Automatic audio file tagging tool using FreeDB for Windows
           </WorkGridItem>
-        </Section>
-        <Section delay={0.6}>
+        </Section> */}
+        {/* <Section delay={0.6}>
           <WorkGridItem id="amembo" thumbnail={thumbAmembo} title="Amembo">
             P2P private file sharing tool with MSN Messenger integration for
             Windows
           </WorkGridItem>
         </Section>
-      </SimpleGrid>
+      </SimpleGrid> */}
     </Container>
   </Layout>
 )

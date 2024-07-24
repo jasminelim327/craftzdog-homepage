@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
-import { IoLogoGithub } from 'react-icons/io5'
+import { IoLogoGithub, IoLogoStackoverflow } from 'react-icons/io5'
 import { AiFillLinkedin } from "react-icons/ai";
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
@@ -26,8 +26,8 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
     <NextLink href={href} passHref scroll={false}>
       <Link
         p={2}
-        bg={active ? 'grassTeal' : undefined}
-        color={active ? '#202023' : inactiveColor}
+        bg={active ? undefined: undefined}
+        color={active ? undefined : inactiveColor}
         target={target}
         {...props}
       >
@@ -71,7 +71,17 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-
+           <LinkItem
+            href="works"
+            path={path}
+            display="inline-flex"
+            alignItems="center"
+            style={{ gap: 4 }}
+            pl={2}
+          >
+            <IoLogoStackoverflow />
+            <b>Projects</b>
+          </LinkItem>
           <LinkItem
             href="https://linkedin.com/in/jasmine-lim-jia-yi"
             path={path}
@@ -113,9 +123,9 @@ const Navbar = props => {
                 <NextLink href="/" passHref>
                   <MenuItem as={Link}>About</MenuItem>
                 </NextLink>
-                <NextLink href="/works" passHref>
+                {/* <NextLink href="/works" passHref>
                   <MenuItem as={Link}>Works</MenuItem>
-                </NextLink>
+                </NextLink> */}
                 <NextLink href="/posts" passHref>
                   <MenuItem as={Link}>Posts</MenuItem>
                 </NextLink>

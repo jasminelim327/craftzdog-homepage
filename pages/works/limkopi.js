@@ -15,22 +15,32 @@ import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 
 const Work = () => (
-  <Layout title="Menkiki (麺利き)">
+  <Layout title="lim-kopi">
     <Container>
       <Title>
-        Menkiki (麺利き) <Badge>2015</Badge>
+        Limkopi <Badge>2023</Badge>
       </Title>
       <P>
-        Menkiki suggests ramen(Chinese noodle) shops based on a photo of ramen
-        you want to eat. Why? Because you don&apos;t need to input Japanese
-        keywords to find restaurants, but just specify a ramen photo then it
-        will suggest great shops for you. It supports 900+ famous ramen shops in
-        Japan!
+      a mobile application designed to bridge the cross-generational gap and empower the silver generation. Built during the Ellipsis Hackathon 2023, the platform enhances user experience and engagement through functionalities like peer-to-peer learning and gamified learning.
       </P>
-      <P>
+      {/* <P>
         So, you can check a shop info as soon as you found a promising ramen
         shop in a food magazine. Let&apos;s go out and have a delicious ramen!
-      </P>
+      </P> */}
+
+Achievements:
+2nd Runner-up among 80 teams at the Ellipsis Hackathon 2023.
+Tech Stack:
+Frontend: React
+Backend: Firebase
+Key Contributions:
+Championed front-end design ensuring an elderly-friendly interface.
+Integrated peer-to-peer and gamified learning elements.
+Ensured a responsive design for an intuitive user experience.
+Impact:
+Positioned the application favorably among its intended audience.
+Enhanced user engagement and learning experience for the elderly.
+
       <UnorderedList my={4}>
         <ListItem>Ramen shop recommendation based on photo</ListItem>
         <ListItem>Show shops near your current location</ListItem>
