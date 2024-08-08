@@ -13,7 +13,6 @@ import {
   Tag,
   TagLeftIcon,
   Heading,
-  Center,
   TagLabel,
   Divider
   

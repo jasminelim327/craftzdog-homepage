@@ -3,21 +3,16 @@ import {
   List,
   ListItem,
   SimpleGrid,
-  Center, 
-  UnorderedList, 
-  Link,
   Card,
   CardHeader,
   CardBody, 
   Text,
-  Box,
   Container,
   Heading,
   Tag,
   TagLeftIcon,
   TagLabel,
   HStack,  
-  TagRightIcon,
   Divider
 } from '@chakra-ui/react'
 import { StarIcon } from '@chakra-ui/icons'

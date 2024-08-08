@@ -23,8 +23,8 @@ const Work = () => (
 
       renowned psychologists like Freud and Jung for its suggestions.
 Features:
-Emotion Analysis: Uses natural language processing (NLP) to analyze journal entries and identify the user's emotional state.
-Personalized Recommendations: Provides tailored advice and coping strategies based on the user's emotions, referencing psychological theories and literature.
+Emotion Analysis: Uses natural language processing (NLP) to analyze journal entries and identify the user&apos;s emotional state.
+Personalized Recommendations: Provides tailored advice and coping strategies based on the user&apos;s emotions, referencing psychological theories and literature.
 Reference Integration: Offers insights and recommendations from reputable sources, including books and works by psychologists such as Freud and Jung.
 User-Friendly Interface: Designed to be intuitive and engaging, encouraging regular journaling and self-reflection.
 Tech Stack:
