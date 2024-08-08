@@ -1,12 +1,13 @@
 import NextLink from 'next/link'
-import { Heading, Box, Image, Link, Badge } from '@chakra-ui/react'
+import { Heading, Box, Image, Badge } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
+import { Link as ChakraLink } from '@chakra-ui/react';
 
 export const Title = ({ children }) => (
   <Box>
     <NextLink href="/works" passHref>
-      <Link>Works</Link>
-    </NextLink>
+          <ChakraLink>Works</ChakraLink>
+        </NextLink>
     <span>
       {' '}
       <ChevronRightIcon />{' '}

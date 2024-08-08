@@ -98,28 +98,13 @@ const Home = () => (
           INTRODUCTION
         </Heading>
         <Paragraph>
-          Hello, I am Jasmine and I am currently a Final year student majoring
+          Hello, I am Jasmine and I am a fresh graduate majored
           in Information Systems (Digital Cloud Solutioning and Financial
-          Technology) and Finance.I am passionate about using my analytical and
+          Technology) and Finance at Singapore Management University.I am passionate about using my analytical and
           problem-solving skills to tackle complex issues! <br></br>
           <br></br>
           Let&apos;s connect!
         </Paragraph>
-        {/* <Box align="center" my={6}>
-          <NextLink href="/works" passHref scroll={false}>
-            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-              Experience <br />
-            </Button>
-          </NextLink>
-          &nbsp; &nbsp;
-          <NextLink href="/works" passHref scroll={false}>
-            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-              Projects <br />
-            </Button>
-          </NextLink>
-          &nbsp; &nbsp;
-          <br></br>
-        </Box> */}
       </Section>
 
       <Section delay={0.2}>

@@ -4,6 +4,8 @@ import { Box, Container } from '@chakra-ui/react'
 import Footer from '../footer'
 
 const Main = ({ children, router }) => {
+
+  const hideNavBarPaths = ['/works/inapp','/works/crissy', '/works/shopmytee', '/works/limkopi', '/works/finda', '/works/daily', '/works/buddy' ];
   return (
     <Box as="main" pb={8}>
       <Head>
@@ -21,7 +23,8 @@ const Main = ({ children, router }) => {
         <title>Jasmine Lim - Homepage</title>
       </Head>
 
-      <NavBar path={router.asPath} />
+      {!hideNavBarPaths.includes(router.asPath) && <NavBar path={router.asPath} />}
+
 
       <Container maxW="container.md" pt={14}>
         {children}

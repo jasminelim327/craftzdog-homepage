@@ -5,18 +5,35 @@ import {
   List,
   ListItem,
   SimpleGrid,
-  UnorderedList,
+  Card,
+  CardHeader,
+  CardBody,
+  Text,
+  HStack,
+  Tag,
+  TagLeftIcon,
   Heading,
-  Center
+  Center,
+  TagLabel,
+  Divider
+  
 } from '@chakra-ui/react'
+import Section from '../../components/section'
+
 import Layout from '../../components/layouts/article'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
+import { CheckCircleIcon, StarIcon } from '@chakra-ui/icons'
+
+import { TbBrandNodejs, TbDeviceDesktop, TbDeviceMobile } from "react-icons/tb";
+import {SiJavascript, SiReact} from "react-icons/si"
+
+import { DiMsqlServer } from "react-icons/di";
 
 const Work = () => (
   <Layout title="Crissy">
     <Container>
+      <Section delay={0.1}>
       <Title>
         Crissy <Badge>2023</Badge>
       </Title>
@@ -24,81 +41,146 @@ const Work = () => (
       Crissy, a platform that allows users to post questions related to workplace issues, bias awareness, diversity, and inclusion. Users receive answers from experts in the field, helping them gain insights, different perspectives, and expert advice on addressing specific challenges or situations in the workplace.
       </P>
       <br></br><br></br>
-      <P>
-      Source Code: Crissy on GitHub
-Slides: Crissy Presentation
-Tech Stack:
-Frontend: React, TypeScript
-Backend: Firebase
-Impact:
-Provided a platform for open discussions on workplace bias and diversity.
-Facilitated access to expert advice, promoting a more inclusive work environment.
+  
+      <WorkImage src="/images/works/crissy1.png" alt="walknote" />
+        <WorkImage src="/images/works/crissy2.png" alt="walknote" />
+      <WorkImage src="/images/works/crissy3.png" alt="walknote" />    
+      </Section>
+        
+        
+    <Section delay={0.3}>
+    <List mx={2} my={2} p={2}>
+      <ListItem mb={4}>
+      <Meta>Source Code</Meta>
+      <Link>https://github.com/jasminelim327/Crissy</Link>
+      </ListItem>
+       <ListItem  mb={4}> 
+        <Meta>Tech Stack</Meta>
+        <br/><br/>
+            <HStack spacing={2}>
+              {/* Vue.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={TbBrandNodejs} />
+                <TagLabel>NodeJS</TagLabel>
+              </Tag>
 
-      </P>
-      <List ml={4} my={4}>
-        <ListItem>
+              {/* Database Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={DiMsqlServer} />
+                <TagLabel>MSQL</TagLabel>
+              </Tag>
+
+              {/* JavaScript Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={SiJavascript} />
+                <TagLabel>JavaScript</TagLabel>
+              </Tag>
+
+               {/* Node.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={SiReact} />
+                <TagLabel> React</TagLabel>
+              </Tag>
+
+            </HStack>
+            </ListItem>
+
+            <ListItem>
           <Meta>Platform</Meta>
-          <span>iOS</span>
-        </ListItem>
-        <ListItem>
-          <Meta>Blogpost</Meta>
-          <Link href="https://archive.craftz.dog/blog.odoruinu.net/2016/09/06/farewell-from-walknote/">
-            音楽発掘アプリwalknoteクローズのお知らせ{' '}
-            <ExternalLinkIcon mx="2px" />
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Meta>Stack</Meta>
-          <span>Objective-C, PHP, MongoDB</span>
-        </ListItem>
-      </List>
+            <br></br>
+            <br></br>
+            <HStack spacing={2}>
+              {/* Vue.js Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={TbDeviceMobile} />
+                <TagLabel> Mobile</TagLabel>
+              </Tag>
 
-      <Heading as="h4" fontSize={16} my={6}>
-        <Center>Media coverage</Center>
-      </Heading>
-
-      {/* <UnorderedList my={4}>
-        <ListItem>
-          <Link href="http://renewal49.hateblo.jp/entry/20120710/1341925681">
-            <Badge mr={2}>リニューアル式</Badge>
-            強力すぎて紹介しそびれていた音楽好きのための神アプリ『walknote』
-            <ExternalLinkIcon mx="2px" />
-          </Link>
+              {/* Firebase Tag */}
+              <Tag
+                size="md"
+                variant="solid"
+                borderRadius="full"
+                colorScheme="gray"
+              >
+                <TagLeftIcon boxSize="15px" as={TbDeviceDesktop} />
+                <TagLabel>Desktop</TagLabel>
+              </Tag>
+            </HStack>
         </ListItem>
-
+        <br></br>
+            
         <ListItem>
-          <Link href="http://www.appbank.net/2011/10/15/iphone-application/309349.php">
-            <Badge mr={2}>appbank</Badge>
-            walknote:
-            CD屋の試聴機が、自分向けになって手元に到着。そんな曲探しアプリ。無料。
-            <ExternalLinkIcon mx="2px" />
-          </Link>
-        </ListItem>
+        <Meta>Impact</Meta>
+        <br></br>
+        <br></br>
 
-        <ListItem>
-          <Link href="http://www.danshihack.com/2012/07/18/junp/iphoneapp-walknote.html">
-            <Badge mr={2}>男子ハック</Badge>
-            [おすすめの音楽をレコメンド！ストリーミング再生してくれるiPhoneアプリ「walknote」が素敵。
-          </Link>
-          <ExternalLinkIcon mx="2px" />
-        </ListItem>
+        <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(400px, 1fr))' >
+   
+  <Card colorScheme="gray">
+    <CardHeader> 
+      <Heading size='md'> <StarIcon /> Provided a platform for open discussions on workplace bias and diversity </Heading>
+    </CardHeader>
+    <CardBody>
+      <Text> Facilitated access to expert advice, promoting a more inclusive work environment.</Text>
+    </CardBody>
+  </Card>
+</SimpleGrid>
+</ListItem>
+<br></br>
 
-        <ListItem>
-          <Badge mr={2}>タブロイド</Badge>
-          <Link href="http://www.tabroid.jp/app/multimedia/2013/05/app.walknote.html">
-            「YOU、これ聴いちゃいなよ」自分好みの曲が勝手に集まる音楽プレーヤー『walknote』
-          </Link>
-          <ExternalLinkIcon mx="2px" />
-        </ListItem>
-      </UnorderedList> */}
+<ListItem>
+        <Meta>Key Features</Meta>
+        <br></br>
+        <br></br>
 
-      <SimpleGrid columns={2} gap={2}>
-        <WorkImage src="/images/works/walknote_01.png" alt="walknote" />
-        <WorkImage src="/images/works/walknote_02.png" alt="walknote" />
-      </SimpleGrid>
-      <WorkImage src="/images/works/walknote_03.png" alt="walknote" />
-      <WorkImage src="/images/works/walknote_04.png" alt="walknote" />
-      <WorkImage src="/images/works/walknote_05.png" alt="walknote" />
+        <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(400px, 1fr))' >
+   
+  <Card colorScheme="gray">
+    <CardHeader> 
+      <Heading size='md'> <CheckCircleIcon /> Get woke about unconscious biasness at workplace</Heading>
+    </CardHeader>
+    <CardBody>
+      <Text>
+      Users are able to post questions/ opinion related to their personal experience on unconscious biasness
+      <Divider orientation='horizontal' my={2} />
+Users and able search content based on tags and interact with other users through comments and reactions to the post
+<Divider orientation='horizontal' my={2} />
+Users can get updates on their posts and comments through in-app notifications
+
+</Text>
+    </CardBody>
+  </Card>
+</SimpleGrid>
+</ListItem>
+
+        </List>
+        </Section>
     </Container>
   </Layout>
 )
