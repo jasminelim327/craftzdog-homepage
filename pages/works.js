@@ -1,4 +1,4 @@
-import { Container, Heading, SimpleGrid, Text, Box, Link, Button, Badge } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, Text, Box, Link, Button, Divider, Badge } from '@chakra-ui/react'
 import { IoLogoGithub, IoApps } from 'react-icons/io5'
 import NextLink from 'next/link'
 import Layout from '../components/layouts/article'
@@ -42,6 +42,15 @@ const BotCard = ({ href, gradient, emoji, title, year, description, children }) 
   </NextLink>
 )
 
+const YearHeading = ({ year }) => (
+  <Box mt={8} mb={4}>
+    <Heading as="h4" fontSize={15} color="gray.500" letterSpacing="widest" textTransform="uppercase">
+      {year}
+    </Heading>
+    <Divider mt={2} />
+  </Box>
+)
+
 const Works = () => (
   <Layout title="Works">
     <Container>
@@ -49,59 +58,18 @@ const Works = () => (
         Works
       </Heading>
 
-      {/* 2024 */}
+      {/* ── 2024 ── */}
+      <Section delay={0.0}>
+        <YearHeading year="2024" />
+      </Section>
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
-        <Section>
+        <Section delay={0.1}>
           <WorkGridItem id="inapp" title="In-App Feedback Solution" thumbnail={thumbInApp} year="2024">
             SDK designed to provide easily integrable feedback collection and tracking components for existing web and mobile applications
           </WorkGridItem>
         </Section>
 
-        {/* 2023 */}
-        <Section>
-          <WorkGridItem id="crissy" title="Crissy" thumbnail={thumbCrissy} year="2023">
-            A platform that allows users to post questions related to workplace issues, bias awareness, diversity, and inclusion
-          </WorkGridItem>
-        </Section>
-
         <Section delay={0.1}>
-          <WorkGridItem id="limkopi" thumbnail={thumbLimkopi} title="LimKopi" year="2023">
-            A mobile application designed to bridge the cross-generational gap and empower the silver generation.
-          </WorkGridItem>
-        </Section>
-
-        <Section delay={0.1}>
-          <WorkGridItem id="shopmytee" title="ShopMyTee" thumbnail={shopmytee1} year="2023">
-            An e-commerce platform, built and deployed using Amazon Web Services (AWS)
-          </WorkGridItem>
-        </Section>
-
-        {/* 2022 */}
-        <Section delay={0.2}>
-          <WorkGridItem id="finda" thumbnail={findaThumbnail} title="Finda" year="2022">
-            An investment tool aimed at enhancing financial literacy through gamified and experiential learning
-          </WorkGridItem>
-        </Section>
-
-        <Section delay={0.2}>
-          <WorkGridItem id="daily" thumbnail={thumbDaily} title="daily" year="2022">
-            A Flutter-based mobile application aimed at enhancing the accessibility of public donations for non-profit organizations (NPOs)
-          </WorkGridItem>
-        </Section>
-      </SimpleGrid>
-
-      {/* AI & Bots */}
-      <Section delay={0.3}>
-        <Heading as="h3" fontSize={20} mt={6} mb={2}>
-          🤖 AI & Bots
-        </Heading>
-        <Text fontSize={14} color="gray.500" mb={4}>
-          Personal projects exploring AI-powered tools and automation
-        </Text>
-      </Section>
-
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
-        <Section delay={0.4}>
           <BotCard
             href="/works/fluffy-fiesta"
             gradient="linear-gradient(135deg, #1a3a1a, #0d2e0d)"
@@ -118,7 +86,7 @@ const Works = () => (
           </BotCard>
         </Section>
 
-        <Section delay={0.4}>
+        <Section delay={0.1}>
           <BotCard
             href="/works/astrology-bot"
             gradient="linear-gradient(135deg, #2a1a3a, #1a0d2e)"
@@ -129,25 +97,66 @@ const Works = () => (
           />
         </Section>
 
-        <Box gridColumn={['span 1', 'span 1', 'span 2']}>
-          <Section delay={0.4}>
-            <BotCard
-              href="/works/interview-prep"
-              gradient="linear-gradient(135deg, #1a2a3a, #0d1e2e)"
-              emoji="🎯"
-              title="Interview Prep"
-              year="2024"
-              description="A gamified interview prep platform with XP-based progression, mock AI interviews powered by Claude, and a 16-week FAANG roadmap — built on focus, not willpower."
-            >
-              <Link href="https://interview-prep-dgb.pages.dev/" isExternal onClick={e => e.stopPropagation()}>
-                <Button size="sm" variant="outline" colorScheme="blue" leftIcon={<IoApps />}>
-                  Live Demo
-                </Button>
-              </Link>
-            </BotCard>
-          </Section>
-        </Box>
+        <Section delay={0.1}>
+          <BotCard
+            href="/works/interview-prep"
+            gradient="linear-gradient(135deg, #1a2a3a, #0d1e2e)"
+            emoji="🎯"
+            title="Interview Prep"
+            year="2024"
+            description="A gamified interview prep platform with XP-based progression, mock AI interviews powered by Claude, and a 16-week FAANG roadmap — built on focus, not willpower."
+          >
+            <Link href="https://interview-prep-dgb.pages.dev/" isExternal onClick={e => e.stopPropagation()}>
+              <Button size="sm" variant="outline" colorScheme="blue" leftIcon={<IoApps />}>
+                Live Demo
+              </Button>
+            </Link>
+          </BotCard>
+        </Section>
       </SimpleGrid>
+
+      {/* ── 2023 ── */}
+      <Section delay={0.2}>
+        <YearHeading year="2023" />
+      </Section>
+      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+        <Section delay={0.3}>
+          <WorkGridItem id="crissy" title="Crissy" thumbnail={thumbCrissy} year="2023">
+            A platform that allows users to post questions related to workplace issues, bias awareness, diversity, and inclusion
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.3}>
+          <WorkGridItem id="limkopi" thumbnail={thumbLimkopi} title="LimKopi" year="2023">
+            A mobile application designed to bridge the cross-generational gap and empower the silver generation.
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.3}>
+          <WorkGridItem id="shopmytee" title="ShopMyTee" thumbnail={shopmytee1} year="2023">
+            An e-commerce platform, built and deployed using Amazon Web Services (AWS)
+          </WorkGridItem>
+        </Section>
+      </SimpleGrid>
+
+      {/* ── 2022 ── */}
+      <Section delay={0.4}>
+        <YearHeading year="2022" />
+      </Section>
+      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+        <Section delay={0.5}>
+          <WorkGridItem id="finda" thumbnail={findaThumbnail} title="Finda" year="2022">
+            An investment tool aimed at enhancing financial literacy through gamified and experiential learning
+          </WorkGridItem>
+        </Section>
+
+        <Section delay={0.5}>
+          <WorkGridItem id="daily" thumbnail={thumbDaily} title="daily" year="2022">
+            A Flutter-based mobile application aimed at enhancing the accessibility of public donations for non-profit organizations (NPOs)
+          </WorkGridItem>
+        </Section>
+      </SimpleGrid>
+
     </Container>
   </Layout>
 )
