@@ -58,24 +58,18 @@ const Works = () => (
         Works
       </Heading>
 
-      {/* ── 2024 ── */}
+      {/* ── 2026 ── */}
       <Section delay={0.0}>
-        <YearHeading year="2024" />
+        <YearHeading year="2026" />
       </Section>
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
-        <Section delay={0.1}>
-          <WorkGridItem id="inapp" title="In-App Feedback Solution" thumbnail={thumbInApp} year="2024">
-            SDK designed to provide easily integrable feedback collection and tracking components for existing web and mobile applications
-          </WorkGridItem>
-        </Section>
-
         <Section delay={0.1}>
           <BotCard
             href="/works/fluffy-fiesta"
             gradient="linear-gradient(135deg, #1a3a1a, #0d2e0d)"
             emoji="🐾"
             title="Fluffy Fiesta Bot"
-            year="2024"
+            year="2026"
             description="A multi-integration personal assistant chatbot connecting Google Calendar, Notion, Slack, and Telegram for unified daily task and scheduling management."
           >
             <Link href="https://github.com/jasminelim327/fluffy-fiesta" isExternal onClick={e => e.stopPropagation()}>
@@ -92,7 +86,7 @@ const Works = () => (
             gradient="linear-gradient(135deg, #2a1a3a, #1a0d2e)"
             emoji="✨"
             title="Astrology Bot"
-            year="2024"
+            year="2026"
             description="A daily newsletter bot that delivers personalised cosmic insights and productivity alignment tips — helping users channel their energy intentionally each day."
           />
         </Section>
@@ -103,7 +97,7 @@ const Works = () => (
             gradient="linear-gradient(135deg, #1a2a3a, #0d1e2e)"
             emoji="🎯"
             title="Interview Prep"
-            year="2024"
+            year="2026"
             description="A gamified interview prep platform with XP-based progression, mock AI interviews powered by Claude, and a 16-week FAANG roadmap — built on focus, not willpower."
           >
             <Link href="https://interview-prep-dgb.pages.dev/" isExternal onClick={e => e.stopPropagation()}>
@@ -112,6 +106,18 @@ const Works = () => (
               </Button>
             </Link>
           </BotCard>
+        </Section>
+      </SimpleGrid>
+
+      {/* ── 2024 ── */}
+      <Section delay={0.1}>
+        <YearHeading year="2024" />
+      </Section>
+      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+        <Section delay={0.2}>
+          <WorkGridItem id="inapp" title="In-App Feedback Solution" thumbnail={thumbInApp} year="2024">
+            SDK designed to provide easily integrable feedback collection and tracking components for existing web and mobile applications
+          </WorkGridItem>
         </Section>
       </SimpleGrid>
 

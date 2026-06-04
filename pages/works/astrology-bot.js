@@ -26,7 +26,7 @@ const Work = () => (
     <Container>
       <Section delay={0.1}>
         <Title>
-          Astrology Bot <Badge>2024</Badge>
+          Astrology Bot <Badge>2026</Badge>
         </Title>
         <P>
           A daily newsletter bot that delivers personalised cosmic insights and productivity

@@ -27,7 +27,7 @@ const Work = () => (
     <Container>
       <Section delay={0.1}>
         <Title>
-          Interview Prep <Badge>2024</Badge>
+          Interview Prep <Badge>2026</Badge>
         </Title>
         <P>
           A gamified interview preparation platform built on the principle of focus, not willpower.

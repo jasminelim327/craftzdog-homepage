@@ -29,7 +29,7 @@ const Work = () => (
     <Container>
       <Section delay={0.1}>
         <Title>
-          Fluffy Fiesta Bot <Badge>2024</Badge>
+          Fluffy Fiesta Bot <Badge>2026</Badge>
         </Title>
         <P>
           A multi-integration personal assistant chatbot that connects Google Calendar, Notion,
