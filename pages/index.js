@@ -9,13 +9,10 @@ import {
   ListItem,
   useColorModeValue,
   chakra,
-  Tag,
-  TagLeftIcon,
-  TagLabel,
-  HStack,
 } from '@chakra-ui/react'
 import { TbBrandNextjs } from "react-icons/tb";
-import { SiPostgresql, SiTypescript, SiGraphql, SiNestjs} from "react-icons/si";
+import { SiPostgresql, SiTypescript, SiGraphql, SiNestjs, SiReact, SiJest } from "react-icons/si";
+import ExperienceEntry from '../components/experience-entry'
 
 
 import { BiLogoSpringBoot } from 'react-icons/bi'
@@ -39,7 +36,6 @@ import {
 
 import { FaJava } from 'react-icons/fa'
 import Image from 'next/image'
-import { BioSection, BioYear } from '../components/bio'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -112,421 +108,114 @@ const Home = () => (
         <Heading as="h5" variant="section-title">
           PROFESSIONAL EXPERIENCE
         </Heading>
-        <br></br>
-        <Box display={{ md: 'flex' }}>
-          <Box px={1} mx={2}>
-            <ProfileImage
-              src="/images/onloop.jpeg"
-              borderRadius="full"
-              width="120px"
-              height="120px"
-            />
-          </Box>
-          <BioSection>
-            <Box flexGrow={1}>
-              <p />
-              <BioYear>Jan 2024 – Sep 2024</BioYear>
-              <br></br>
-              <i>Software Engineering Intern @ Onloop </i>
-              <br></br>
-              <br></br>I work on new features such as Slack Integration and Notifications with strong emphasis on responsiveness across different devices, that elevate user
-              experience on the Onloop mobile and web platform by collaborating with software engineers and product manager
-            </Box>
-            <br></br>
+        <Box mt={6}>
 
-            <b> Technical Stacks</b>
-            <br></br>
-            <br></br>
-            <HStack spacing={2}>
-              {/* Vue.js Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="green"
-              >
-                <TagLeftIcon boxSize="15px" as={TbBrandNextjs} />
-                <TagLabel>NextJS</TagLabel>
-              </Tag>
+          <ExperienceEntry
+            logoSrc={null}
+            logoEmoji="🚀"
+            isLatest={true}
+            isLast={false}
+            role="Software Engineer (Founding Engineer Scope)"
+            company="Stealth Startup"
+            dateRange="Sep 2024 – Feb 2026"
+            description="Architected and developed 4 production-grade applications from concept to launch, building responsive, accessible user interfaces in ReactJS and TypeScript with reusable component-based architecture and robust state management. Integrated frontend with backend services and RESTful APIs built on Node.js + Firebase Cloud Functions with microservices principles, clean architecture, and stateless design — resulting in 40% better API performance and 99.5%+ uptime while enabling rapid feature delivery. Owned end-to-end software quality by implementing comprehensive Jest unit, integration, and end-to-end tests (80%+ coverage on critical paths), conducting code reviews, and applying security best practices (JWT, role-based access control). Collaborated closely with stakeholders in Agile ceremonies to translate business requirements into robust technical solutions, delivering iterative releases on time. Built a real-time cloud synchronisation engine with offline-first capabilities and conflict resolution using NoSQL (Firestore) data modelling — reducing sync conflicts by 85%. Built and customised Launchpad, an internal low-code platform, integrating the Claude AI API to automate mobile app prototyping — reducing prototyping time by 85%."
+            techTags={[
+              { label: 'React', colorScheme: 'teal', icon: SiReact },
+              { label: 'TypeScript', colorScheme: 'blue', icon: SiTypescript },
+              { label: 'Node.js', colorScheme: 'green', icon: IoLogoNodejs },
+              { label: 'Firebase', colorScheme: 'yellow', icon: IoLogoFirebase },
+              { label: 'Jest', colorScheme: 'purple', icon: SiJest },
+            ]}
+            skillTags={[
+              { label: 'Full Stack Dev', icon: IoApps },
+              { label: 'Agile', icon: IoRepeatOutline },
+              { label: 'Security (JWT/RBAC)', icon: IoCodeWorking },
+              { label: 'Documentation', icon: IoReader },
+            ]}
+          />
 
-              {/* Firebase Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="yellow"
-              >
-                <TagLeftIcon boxSize="15px" as={SiPostgresql} />
-                <TagLabel>PostgreSQL</TagLabel>
-              </Tag>
+          <ExperienceEntry
+            logoSrc="/images/onloop.jpeg"
+            isLatest={false}
+            isLast={false}
+            role="Software Engineering Intern"
+            company="Onloop"
+            dateRange="Jan 2024 – Sep 2024"
+            description="Worked on new features including Slack Integration and Notifications with strong emphasis on responsiveness across different devices, elevating user experience on the Onloop mobile and web platform by collaborating with software engineers and the product manager."
+            techTags={[
+              { label: 'NextJS', colorScheme: 'green', icon: TbBrandNextjs },
+              { label: 'PostgreSQL', colorScheme: 'yellow', icon: SiPostgresql },
+              { label: 'TypeScript', colorScheme: 'red', icon: SiTypescript },
+              { label: 'GraphQL', colorScheme: 'blue', icon: SiGraphql },
+              { label: 'NestJS', colorScheme: 'purple', icon: SiNestjs },
+            ]}
+            skillTags={[
+              { label: 'Full Stack Dev', icon: IoApps },
+              { label: 'Agile', icon: IoRepeatOutline },
+              { label: 'Collaboration', icon: IoCodeWorking },
+            ]}
+          />
 
-              {/* Node.js Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="red"
-              >
-                <TagLeftIcon boxSize="15px" as={SiTypescript} />
-                <TagLabel>TypeScript</TagLabel>
-              </Tag>
+          <ExperienceEntry
+            logoSrc="/images/vibefam.jpg"
+            isLatest={false}
+            isLast={false}
+            role="Software Engineering Intern"
+            company="Vibefam"
+            dateRange="Sep 2023 – Dec 2023"
+            description="Worked on enhancements and new features that elevate user experience on the Vibefam platform, with emphasis on a feature-rich and responsive design that caters to diverse user needs."
+            techTags={[
+              { label: 'Vue', colorScheme: 'green', icon: IoLogoVue },
+              { label: 'Firebase', colorScheme: 'yellow', icon: IoLogoFirebase },
+              { label: 'Node.js', colorScheme: 'red', icon: IoLogoNodejs },
+            ]}
+            skillTags={[
+              { label: 'Full Stack Dev', icon: IoApps },
+              { label: 'Agile', icon: IoRepeatOutline },
+              { label: 'Software Testing', icon: IoCodeWorking },
+            ]}
+          />
 
-               {/* Node.js Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="blue"
-              >
-                <TagLeftIcon boxSize="15px" as={SiGraphql} />
-                <TagLabel>GraphQL</TagLabel>
-              </Tag>
+          <ExperienceEntry
+            logoSrc="/images/creditsuisse.jpg"
+            isLatest={false}
+            isLast={false}
+            role="Apprentice"
+            company="Credit Suisse INSPIRE"
+            dateRange="Jun – Dec 2022"
+            description="Developed a full-stack web application allowing users to express and discuss unconscious bias in the workplace, guided by Software Engineers at Credit Suisse. Features include a multi-user discussion platform, profile customisation, and subscription to tags."
+            techTags={[
+              { label: 'React', colorScheme: 'blue', icon: IoLogoVue },
+              { label: 'Firebase', colorScheme: 'yellow', icon: IoLogoFirebase },
+              { label: 'Node.js', colorScheme: 'red', icon: IoLogoNodejs },
+              { label: 'Java', colorScheme: 'purple', icon: FaJava },
+              { label: 'SpringBoot', colorScheme: 'green', icon: BiLogoSpringBoot },
+            ]}
+            skillTags={[
+              { label: 'Full Stack Dev', icon: IoApps },
+              { label: 'SDLC', icon: IoRepeatOutline },
+              { label: 'Software Testing', icon: IoCodeWorking },
+            ]}
+          />
 
-            </HStack>
-            <HStack spacing={2} >
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="purple"
-                mt={2}
-              >
-                <TagLeftIcon boxSize="15px" as={SiNestjs} />
-                <TagLabel>NestJS</TagLabel>
-              </Tag>
-              
-            </HStack>
-            <br></br>
-            <b> Skills Developed</b>
-            <br></br>
-            <br></br>
-            <HStack spacing={2}>
-              {/* Vue.js Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="gray"
-              >
-                <TagLeftIcon boxSize="15px" as={IoApps} />
-                <TagLabel>Full Stack Dev</TagLabel>
-              </Tag>
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="gray"
-              >
-                <TagLeftIcon boxSize="15px" as={IoRepeatOutline} />
-                <TagLabel>Agile</TagLabel>
-              </Tag>
-              {/* Node.js Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="gray"
-              >
-                <TagLeftIcon boxSize="15px" as={IoCodeWorking} />
-                <TagLabel>Collaboration</TagLabel>
-              </Tag>
-              {/* Node.js Tag */}
-            </HStack>
-            <br></br>
-          </BioSection>
-        </Box>
+          <ExperienceEntry
+            logoSrc="/images/ensign.jpg"
+            isLatest={false}
+            isLast={true}
+            role="Cyber Strategy Intern"
+            company="Ensign Infosecurity"
+            dateRange="Jun – Dec 2022"
+            description="Worked on various proposals, in-house process enhancement, and research on technical solutions that enhance clients' cybersecurity posture."
+            techTags={[]}
+            skillTags={[
+              { label: 'Consulting', icon: HiOutlinePresentationChartBar },
+              { label: 'Research', icon: IoGolfOutline },
+              { label: 'Presentation', icon: IoReader },
+            ]}
+          />
 
-        <br></br>
-        <Box display={{ md: 'flex' }}>
-          <Box px={1} mx={2}>
-            <ProfileImage
-              src="/images/vibefam.jpg"
-              borderRadius="full"
-              width="120px"
-              height="120px"
-            />
-          </Box>
-          <BioSection>
-            <Box flexGrow={1}>
-              <p />
-              <BioYear>Sep 2023 - Dec 2023</BioYear>
-              <br></br>
-              <i>Software Engineering Intern @ Vibefam </i>
-              <br></br>
-              <br></br>I work on enhancements and new features that elevate user
-              experience on the Vibefam platform, while emphasizing a
-              feature-rich and responsive design that could cater to diverse
-              user needs.
-            </Box>
-            <br></br>
-
-            <b> Technical Stacks</b>
-            <br></br>
-            <br></br>
-            <HStack spacing={2}>
-              {/* Vue.js Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="green"
-              >
-                <TagLeftIcon boxSize="15px" as={IoLogoVue} />
-                
-                <TagLabel>Vue</TagLabel>
-              </Tag>
-
-              {/* Firebase Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="yellow"
-              >
-                <TagLeftIcon boxSize="15px" as={IoLogoFirebase} />
-                <TagLabel>Firebase</TagLabel>
-              </Tag>
-
-              {/* Node.js Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="red"
-              >
-                <TagLeftIcon boxSize="15px" as={IoLogoNodejs} />
-                <TagLabel>Node.js</TagLabel>
-              </Tag>
-            </HStack>
-            <br></br>
-            <b> Skills Developed</b>
-            <br></br>
-            <br></br>
-            <HStack spacing={2}>
-              {/* Vue.js Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="gray"
-              >
-                <TagLeftIcon boxSize="15px" as={IoApps} />
-                <TagLabel>Full Stack Dev</TagLabel>
-              </Tag>
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="gray"
-              >
-                <TagLeftIcon boxSize="15px" as={IoRepeatOutline} />
-                <TagLabel>Agile</TagLabel>
-              </Tag>
-              {/* Node.js Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="gray"
-              >
-                <TagLeftIcon boxSize="15px" as={IoCodeWorking} />
-                <TagLabel>Software Testing</TagLabel>
-              </Tag>
-              {/* Node.js Tag */}
-            </HStack>
-            <br></br>
-          </BioSection>
-        </Box>
-
-        <br></br>
-        <Box display={{ md: 'flex' }}>
-          <Box px={1} mx={2}>
-            <ProfileImage
-              src="/images/creditsuisse.jpg"
-              borderRadius="full"
-              width="100px"
-              height="100px"
-            />
-          </Box>
-
-          <BioSection>
-            <p />
-            <BioYear>Jun - Dec 2022</BioYear>
-            <br></br>
-            <i>Apprentice @ Credit Suisse INSPIRE </i>
-            <p></p>
-            <br></br>I developed a full-stack web application that allow users
-            to express and discuss about unconsious biasness in the workplace
-            with the guidance from Software Engineers at Credit Suisse. The
-            features includes a discussion platform for multiple users, profile
-            customisation and subscription to tags.
-            <br></br>
-            <br></br>
-            <b> Technical Stacks</b>
-            <br></br>
-            <br></br>
-            <HStack spacing={2}>
-              {/* Vue.js Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="blue"
-              >
-                <TagLeftIcon boxSize="15px" as={IoLogoVue} />
-                <TagLabel>React</TagLabel>
-              </Tag>
-
-              {/* Firebase Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="yellow"
-              >
-                <TagLeftIcon boxSize="15px" as={IoLogoFirebase} />
-                <TagLabel>Firebase</TagLabel>
-              </Tag>
-
-              {/* Node.js Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="red"
-              >
-                <TagLeftIcon boxSize="15px" as={IoLogoNodejs} />
-                <TagLabel>Node.js</TagLabel>
-              </Tag>
-
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="purple"
-              >
-                <TagLeftIcon boxSize="15px" as={FaJava} />
-                <TagLabel>Java</TagLabel>
-              </Tag>
-            </HStack>
-            <HStack>
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="green"
-                mt={2}
-              >
-                <TagLeftIcon boxSize="15px" as={BiLogoSpringBoot} />
-                <TagLabel>SpringBoot</TagLabel>
-              </Tag>
-            </HStack>
-            <br></br>
-            <b> Skills Developed</b>
-            <br></br>
-            <br></br>
-            <HStack spacing={2}>
-              {/* Vue.js Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="gray"
-              >
-                <TagLeftIcon boxSize="15px" as={IoApps} />
-                <TagLabel>Full Stack Dev</TagLabel>
-              </Tag>
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="gray"
-              >
-                <TagLeftIcon boxSize="15px" as={IoRepeatOutline} />
-                <TagLabel>SDLC</TagLabel>
-              </Tag>
-              {/* Node.js Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="gray"
-              >
-                <TagLeftIcon boxSize="15px" as={IoCodeWorking} />
-                <TagLabel>Software Testing</TagLabel>
-              </Tag>
-              {/* Node.js Tag */}
-            </HStack>
-            <br></br>
-          </BioSection>
-        </Box>
-        <br></br>
-
-        <Box display={{ md: 'flex' }}>
-          <Box px={1} mx={2}>
-            <ProfileImage
-              src="/images/ensign.jpg"
-              borderRadius="full"
-              width="100px"
-              height="100px"
-            />
-          </Box>
-          <BioSection>
-            <p></p>
-            <BioYear>Jun - Dec 2022</BioYear>
-            <br></br>
-            <i>Cyber Strategy Intern @ Ensign Infosecurity</i>
-            <br></br>
-            <br></br>I work on various proposals, in-house process enhancement
-            and reaserch on technical solutions that enhance client's
-            cybersecurity posture.
-            <br></br>
-            <br></br>
-            <b>Skills Developed</b>
-            <br></br>
-            <br></br>
-            <HStack spacing={2}>
-              {/* Vue.js Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="gray"
-              >
-                <TagLeftIcon
-                  boxSize="15px"
-                  as={HiOutlinePresentationChartBar}
-                />
-                <TagLabel>Consulting</TagLabel>
-              </Tag>
-
-              {/* Firebase Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="gray"
-              >
-                <TagLeftIcon boxSize="15px" as={IoGolfOutline} />
-                <TagLabel>Research</TagLabel>
-              </Tag>
-
-              {/* Node.js Tag */}
-              <Tag
-                size="md"
-                variant="solid"
-                borderRadius="full"
-                colorScheme="gray"
-              >
-                <TagLeftIcon boxSize="15px" as={IoReader} />
-                <TagLabel>Presentation</TagLabel>
-              </Tag>
-            </HStack>
-            <br></br>
-          </BioSection>
         </Box>
       </Section>
-      <br></br>
 
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
