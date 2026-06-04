@@ -1,4 +1,4 @@
-import { Container, Heading, SimpleGrid, Text, Box, Link, Button } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, Text, Box, Link, Button, Badge } from '@chakra-ui/react'
 import { IoLogoGithub, IoApps } from 'react-icons/io5'
 import NextLink from 'next/link'
 import Layout from '../components/layouts/article'
@@ -10,10 +10,37 @@ import shopmytee1 from '../public/images/works/shopmytee1.png'
 import thumbLimkopi from '../public/images/works/limkopi1.png'
 import findaThumbnail from '../public/images/works/finda1.png'
 import thumbDaily from '../public/images/works/daily1.png'
-// import thumbStyly from '../public/images/works/styly_eyecatch.png'
-// import thumbPichu2 from '../public/images/works/pichu2_eyecatch.png'
-// import thumbFreeDBTagger from '../public/images/works/freedbtagger_eyecatch.png'
-// import thumbAmembo from '../public/images/works/amembo_eyecatch.png'
+
+const BotCard = ({ href, gradient, emoji, title, year, description, children }) => (
+  <NextLink href={href} passHref scroll={false}>
+    <Box w="100%" cursor="pointer" role="group">
+      <Box
+        h="160px"
+        borderRadius="lg"
+        bg={gradient}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        fontSize="56px"
+        mb={3}
+        transition="opacity 0.2s"
+        _groupHover={{ opacity: 0.85 }}
+      >
+        {emoji}
+      </Box>
+      <Text fontSize={20} mt={2} mb={1}>
+        {title}
+        {year && (
+          <Badge ml={2} colorScheme="teal" fontSize="0.55em" verticalAlign="middle">
+            {year}
+          </Badge>
+        )}
+      </Text>
+      <Text fontSize={14} mb={2}>{description}</Text>
+      {children}
+    </Box>
+  </NextLink>
+)
 
 const Works = () => (
   <Layout title="Works">
@@ -22,95 +49,49 @@ const Works = () => (
         Works
       </Heading>
 
+      {/* 2024 */}
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section>
-          <WorkGridItem id="inapp" title="In-App Feedback Solution" thumbnail={thumbInApp}>
-            SDK designed to provide easily integrable feedback collection and tracking components for existing web and mobile applications 
+          <WorkGridItem id="inapp" title="In-App Feedback Solution" thumbnail={thumbInApp} year="2024">
+            SDK designed to provide easily integrable feedback collection and tracking components for existing web and mobile applications
           </WorkGridItem>
         </Section>
+
+        {/* 2023 */}
         <Section>
-          <WorkGridItem
-            id="crissy"
-            title="Crissy"
-            thumbnail={thumbCrissy}
-          >
+          <WorkGridItem id="crissy" title="Crissy" thumbnail={thumbCrissy} year="2023">
             A platform that allows users to post questions related to workplace issues, bias awareness, diversity, and inclusion
           </WorkGridItem>
         </Section>
 
         <Section delay={0.1}>
-          <WorkGridItem
-            id="shopmytee"
-            title="ShopMyTee"
-            thumbnail={shopmytee1}
-          >
-           An e-commerce platform, built and deployed using Amazon Web Services (AWS)
+          <WorkGridItem id="limkopi" thumbnail={thumbLimkopi} title="LimKopi" year="2023">
+            A mobile application designed to bridge the cross-generational gap and empower the silver generation.
           </WorkGridItem>
         </Section>
+
         <Section delay={0.1}>
-          <WorkGridItem id="limkopi" thumbnail={thumbLimkopi} title="LimKopi">
-          A mobile application designed to bridge the cross-generational gap and empower the silver generation.
+          <WorkGridItem id="shopmytee" title="ShopMyTee" thumbnail={shopmytee1} year="2023">
+            An e-commerce platform, built and deployed using Amazon Web Services (AWS)
           </WorkGridItem>
         </Section>
-      </SimpleGrid>
 
-      {/* <Section delay={0.2}>
-        <Divider my={6} />
-
-        <Heading as="h3" fontSize={20} mb={4}>
-          Hackathons
-        </Heading>
-      </Section> */}
-
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
-        <Section delay={0.3}>
-          <WorkGridItem id="finda" thumbnail={findaThumbnail} title="Finda">
-          An investment tool aimed at enhancing financial literacy through gamified and experiential learning
+        {/* 2022 */}
+        <Section delay={0.2}>
+          <WorkGridItem id="finda" thumbnail={findaThumbnail} title="Finda" year="2022">
+            An investment tool aimed at enhancing financial literacy through gamified and experiential learning
           </WorkGridItem>
         </Section>
-        <Section delay={0.3}>
-        <WorkGridItem
-            id="daily"
-            thumbnail={thumbDaily}
-            title="daily"
-          >
+
+        <Section delay={0.2}>
+          <WorkGridItem id="daily" thumbnail={thumbDaily} title="daily" year="2022">
             A Flutter-based mobile application aimed at enhancing the accessibility of public donations for non-profit organizations (NPOs)
           </WorkGridItem>
         </Section>
       </SimpleGrid>
 
-      {/* <Section delay={0.4}>
-        <Divider my={6} />
-
-        <Heading as="h3" fontSize={20} mb={4}>
-          Old works
-        </Heading>
-      </Section>
-
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
-        <Section delay={0.5}>
-          <WorkGridItem id="pichu2" thumbnail={thumbPichu2} title="Pichu*Pichu">
-            Twitter client app for iPhone Safari
-          </WorkGridItem>
-        </Section>
-        <Section delay={0.5}>
-          <WorkGridItem
-            id="freedbtagger"
-            thumbnail={thumbFreeDBTagger}
-            title="freeDBTagger"
-          >
-            Automatic audio file tagging tool using FreeDB for Windows
-          </WorkGridItem>
-        </Section> */}
-        {/* <Section delay={0.6}>
-          <WorkGridItem id="amembo" thumbnail={thumbAmembo} title="Amembo">
-            P2P private file sharing tool with MSN Messenger integration for
-            Windows
-          </WorkGridItem>
-        </Section>
-      </SimpleGrid> */}
-
-      <Section delay={0.4}>
+      {/* AI & Bots */}
+      <Section delay={0.3}>
         <Heading as="h3" fontSize={20} mt={6} mb={2}>
           🤖 AI & Bots
         </Heading>
@@ -120,97 +101,51 @@ const Works = () => (
       </Section>
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
-        <Section delay={0.5}>
-          <Box w="100%">
-            <Box
-              h="160px"
-              borderRadius="lg"
-              bg="linear-gradient(135deg, #1a3a1a, #0d2e0d)"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              fontSize="56px"
-              mb={3}
-            >
-              🐾
-            </Box>
-            <NextLink href="/works/fluffy-fiesta" passHref>
-              <Text fontSize={16} fontWeight="bold" mb={1} cursor="pointer" _hover={{ textDecoration: 'underline' }}>
-                Fluffy Fiesta Bot
-              </Text>
-            </NextLink>
-            <Text fontSize={14} mb={2}>
-              A multi-integration personal assistant chatbot connecting Google
-              Calendar, Notion, Slack, and Telegram for unified daily task and
-              scheduling management.
-            </Text>
-            <Link href="https://github.com/jasminelim327/fluffy-fiesta" isExternal>
+        <Section delay={0.4}>
+          <BotCard
+            href="/works/fluffy-fiesta"
+            gradient="linear-gradient(135deg, #1a3a1a, #0d2e0d)"
+            emoji="🐾"
+            title="Fluffy Fiesta Bot"
+            year="2024"
+            description="A multi-integration personal assistant chatbot connecting Google Calendar, Notion, Slack, and Telegram for unified daily task and scheduling management."
+          >
+            <Link href="https://github.com/jasminelim327/fluffy-fiesta" isExternal onClick={e => e.stopPropagation()}>
               <Button size="sm" variant="outline" colorScheme="teal" leftIcon={<IoLogoGithub />}>
                 GitHub
               </Button>
             </Link>
-          </Box>
+          </BotCard>
         </Section>
 
-        <Section delay={0.5}>
-          <Box w="100%">
-            <Box
-              h="160px"
-              borderRadius="lg"
-              bg="linear-gradient(135deg, #2a1a3a, #1a0d2e)"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              fontSize="56px"
-              mb={3}
-            >
-              ✨
-            </Box>
-            <NextLink href="/works/astrology-bot" passHref>
-              <Text fontSize={16} fontWeight="bold" mb={1} cursor="pointer" _hover={{ textDecoration: 'underline' }}>
-                Astrology Bot
-              </Text>
-            </NextLink>
-            <Text fontSize={14} mb={2}>
-              A daily newsletter bot that delivers personalised cosmic insights and
-              productivity alignment tips — helping users channel their energy
-              intentionally each day.
-            </Text>
-          </Box>
+        <Section delay={0.4}>
+          <BotCard
+            href="/works/astrology-bot"
+            gradient="linear-gradient(135deg, #2a1a3a, #1a0d2e)"
+            emoji="✨"
+            title="Astrology Bot"
+            year="2024"
+            description="A daily newsletter bot that delivers personalised cosmic insights and productivity alignment tips — helping users channel their energy intentionally each day."
+          />
         </Section>
 
         <Box gridColumn={['span 1', 'span 1', 'span 2']}>
-        <Section delay={0.5}>
-          <Box w="100%">
-            <Box
-              h="160px"
-              borderRadius="lg"
-              bg="linear-gradient(135deg, #1a2a3a, #0d1e2e)"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              fontSize="56px"
-              mb={3}
+          <Section delay={0.4}>
+            <BotCard
+              href="/works/interview-prep"
+              gradient="linear-gradient(135deg, #1a2a3a, #0d1e2e)"
+              emoji="🎯"
+              title="Interview Prep"
+              year="2024"
+              description="A gamified interview prep platform with XP-based progression, mock AI interviews powered by Claude, and a 16-week FAANG roadmap — built on focus, not willpower."
             >
-              🎯
-            </Box>
-            <NextLink href="/works/interview-prep" passHref>
-              <Text fontSize={16} fontWeight="bold" mb={1} cursor="pointer" _hover={{ textDecoration: 'underline' }}>
-                Interview Prep
-              </Text>
-            </NextLink>
-            <Text fontSize={14} mb={2}>
-              A gamified interview prep platform with XP-based progression, mock AI
-              interviews powered by Claude, and a 16-week FAANG roadmap — built on
-              focus, not willpower.
-            </Text>
-            <Link href="https://interview-prep-dgb.pages.dev/" isExternal>
-              <Button size="sm" variant="outline" colorScheme="blue" leftIcon={<IoApps />}>
-                Live Demo
-              </Button>
-            </Link>
-          </Box>
-        </Section>
+              <Link href="https://interview-prep-dgb.pages.dev/" isExternal onClick={e => e.stopPropagation()}>
+                <Button size="sm" variant="outline" colorScheme="blue" leftIcon={<IoApps />}>
+                  Live Demo
+                </Button>
+              </Link>
+            </BotCard>
+          </Section>
         </Box>
       </SimpleGrid>
     </Container>
