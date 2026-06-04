@@ -185,7 +185,7 @@ const Home = () => (
             dateRange="Jun – Dec 2022"
             description="Developed a full-stack web application allowing users to express and discuss unconscious bias in the workplace, guided by Software Engineers at Credit Suisse. Features include a multi-user discussion platform, profile customisation, and subscription to tags."
             techTags={[
-              { label: 'React', colorScheme: 'blue', icon: IoLogoVue },
+              { label: 'React', colorScheme: 'blue', icon: SiReact },
               { label: 'Firebase', colorScheme: 'yellow', icon: IoLogoFirebase },
               { label: 'Node.js', colorScheme: 'red', icon: IoLogoNodejs },
               { label: 'Java', colorScheme: 'purple', icon: FaJava },
