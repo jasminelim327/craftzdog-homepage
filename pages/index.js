@@ -98,11 +98,12 @@ const Home = () => (
           INTRODUCTION
         </Heading>
         <Paragraph>
-          Hello, I am Jasmine and I am a fresh graduate majored
-          in Information Systems (Digital Cloud Solutioning and Financial
-          Technology) and Finance at Singapore Management University.I am passionate about using my analytical and
-          problem-solving skills to tackle complex issues! <br></br>
-          <br></br>
+          Hello, I&apos;m Jasmine — a software engineer with close to 2 years of
+          professional experience building production-grade applications. I majored
+          in Information Systems (Digital Cloud Solutioning &amp; FinTech) and
+          Finance at Singapore Management University, and I&apos;m passionate about
+          crafting performant, user-focused products.
+          <br /><br />
           Let&apos;s connect!
         </Paragraph>
       </Section>
@@ -124,7 +125,7 @@ const Home = () => (
           <BioSection>
             <Box flexGrow={1}>
               <p />
-              <BioYear>Jan 2024 - Now</BioYear>
+              <BioYear>Jan 2024 – Sep 2024</BioYear>
               <br></br>
               <i>Software Engineering Intern @ Onloop </i>
               <br></br>
@@ -145,7 +146,7 @@ const Home = () => (
                 colorScheme="green"
               >
                 <TagLeftIcon boxSize="15px" as={TbBrandNextjs} />
-                <TagLabel> xxxxxxx NextJS</TagLabel>
+                <TagLabel>NextJS</TagLabel>
               </Tag>
 
               {/* Firebase Tag */}
@@ -156,7 +157,7 @@ const Home = () => (
                 colorScheme="yellow"
               >
                 <TagLeftIcon boxSize="15px" as={SiPostgresql} />
-                <TagLabel>xxxxxxx PostgreSQL</TagLabel>
+                <TagLabel>PostgreSQL</TagLabel>
               </Tag>
 
               {/* Node.js Tag */}
@@ -167,7 +168,7 @@ const Home = () => (
                 colorScheme="red"
               >
                 <TagLeftIcon boxSize="15px" as={SiTypescript} />
-                <TagLabel> xxxxxxx Typescript</TagLabel>
+                <TagLabel>TypeScript</TagLabel>
               </Tag>
 
                {/* Node.js Tag */}
@@ -178,7 +179,7 @@ const Home = () => (
                 colorScheme="blue"
               >
                 <TagLeftIcon boxSize="15px" as={SiGraphql} />
-                <TagLabel> xxxxxxx GraphQL</TagLabel>
+                <TagLabel>GraphQL</TagLabel>
               </Tag>
 
             </HStack>
@@ -191,7 +192,7 @@ const Home = () => (
                 mt={2}
               >
                 <TagLeftIcon boxSize="15px" as={SiNestjs} />
-                <TagLabel> xxxxxxx Nestjs</TagLabel>
+                <TagLabel>NestJS</TagLabel>
               </Tag>
               
             </HStack>
@@ -208,9 +209,8 @@ const Home = () => (
                 colorScheme="gray"
               >
                 <TagLeftIcon boxSize="15px" as={IoApps} />
-                <TagLabel> xxxxxxx Full Stack Web Development</TagLabel>
+                <TagLabel>Full Stack Dev</TagLabel>
               </Tag>
-              Firebase Tag
               <Tag
                 size="md"
                 variant="solid"
@@ -218,7 +218,7 @@ const Home = () => (
                 colorScheme="gray"
               >
                 <TagLeftIcon boxSize="15px" as={IoRepeatOutline} />
-                <TagLabel>xxxxxxx Agile </TagLabel>
+                <TagLabel>Agile</TagLabel>
               </Tag>
               {/* Node.js Tag */}
               <Tag
@@ -228,7 +228,7 @@ const Home = () => (
                 colorScheme="gray"
               >
                 <TagLeftIcon boxSize="15px" as={IoCodeWorking} />
-                <TagLabel> xxxxxxx Collaboration </TagLabel>
+                <TagLabel>Collaboration</TagLabel>
               </Tag>
               {/* Node.js Tag */}
             </HStack>
@@ -273,7 +273,7 @@ const Home = () => (
               >
                 <TagLeftIcon boxSize="15px" as={IoLogoVue} />
                 
-                <TagLabel> xxxxxxx Vue</TagLabel>
+                <TagLabel>Vue</TagLabel>
               </Tag>
 
               {/* Firebase Tag */}
@@ -284,7 +284,7 @@ const Home = () => (
                 colorScheme="yellow"
               >
                 <TagLeftIcon boxSize="15px" as={IoLogoFirebase} />
-                <TagLabel>xxxxxxx Firebase</TagLabel>
+                <TagLabel>Firebase</TagLabel>
               </Tag>
 
               {/* Node.js Tag */}
@@ -295,7 +295,7 @@ const Home = () => (
                 colorScheme="red"
               >
                 <TagLeftIcon boxSize="15px" as={IoLogoNodejs} />
-                <TagLabel> xxxxxxx Node JS</TagLabel>
+                <TagLabel>Node.js</TagLabel>
               </Tag>
             </HStack>
             <br></br>
@@ -311,9 +311,8 @@ const Home = () => (
                 colorScheme="gray"
               >
                 <TagLeftIcon boxSize="15px" as={IoApps} />
-                <TagLabel> xxxxxxx Full Stack Web Development</TagLabel>
+                <TagLabel>Full Stack Dev</TagLabel>
               </Tag>
-              Firebase Tag
               <Tag
                 size="md"
                 variant="solid"
@@ -321,7 +320,7 @@ const Home = () => (
                 colorScheme="gray"
               >
                 <TagLeftIcon boxSize="15px" as={IoRepeatOutline} />
-                <TagLabel>xxxxxxx Agile </TagLabel>
+                <TagLabel>Agile</TagLabel>
               </Tag>
               {/* Node.js Tag */}
               <Tag
@@ -331,7 +330,7 @@ const Home = () => (
                 colorScheme="gray"
               >
                 <TagLeftIcon boxSize="15px" as={IoCodeWorking} />
-                <TagLabel> xxxxxxx Software Testing </TagLabel>
+                <TagLabel>Software Testing</TagLabel>
               </Tag>
               {/* Node.js Tag */}
             </HStack>
@@ -345,8 +344,8 @@ const Home = () => (
             <ProfileImage
               src="/images/creditsuisse.jpg"
               borderRadius="full"
-              width="200px"
-              height="200px"
+              width="100px"
+              height="100px"
             />
           </Box>
 
@@ -375,7 +374,7 @@ const Home = () => (
                 colorScheme="blue"
               >
                 <TagLeftIcon boxSize="15px" as={IoLogoVue} />
-                <TagLabel> xxxxxxx React</TagLabel>
+                <TagLabel>React</TagLabel>
               </Tag>
 
               {/* Firebase Tag */}
@@ -386,7 +385,7 @@ const Home = () => (
                 colorScheme="yellow"
               >
                 <TagLeftIcon boxSize="15px" as={IoLogoFirebase} />
-                <TagLabel>xxxxxxx Firebase</TagLabel>
+                <TagLabel>Firebase</TagLabel>
               </Tag>
 
               {/* Node.js Tag */}
@@ -397,7 +396,7 @@ const Home = () => (
                 colorScheme="red"
               >
                 <TagLeftIcon boxSize="15px" as={IoLogoNodejs} />
-                <TagLabel> xxxxxxx Node JS</TagLabel>
+                <TagLabel>Node.js</TagLabel>
               </Tag>
 
               <Tag
@@ -407,7 +406,7 @@ const Home = () => (
                 colorScheme="purple"
               >
                 <TagLeftIcon boxSize="15px" as={FaJava} />
-                <TagLabel> xxxxxxx Java</TagLabel>
+                <TagLabel>Java</TagLabel>
               </Tag>
             </HStack>
             <HStack>
@@ -419,7 +418,7 @@ const Home = () => (
                 mt={2}
               >
                 <TagLeftIcon boxSize="15px" as={BiLogoSpringBoot} />
-                <TagLabel> xxxxxxx Springboot</TagLabel>
+                <TagLabel>SpringBoot</TagLabel>
               </Tag>
             </HStack>
             <br></br>
@@ -435,9 +434,8 @@ const Home = () => (
                 colorScheme="gray"
               >
                 <TagLeftIcon boxSize="15px" as={IoApps} />
-                <TagLabel> xxxxxxx Full Stack Web Development</TagLabel>
+                <TagLabel>Full Stack Dev</TagLabel>
               </Tag>
-              Firebase Tag
               <Tag
                 size="md"
                 variant="solid"
@@ -445,7 +443,7 @@ const Home = () => (
                 colorScheme="gray"
               >
                 <TagLeftIcon boxSize="15px" as={IoRepeatOutline} />
-                <TagLabel>xxxxxxx SDLC </TagLabel>
+                <TagLabel>SDLC</TagLabel>
               </Tag>
               {/* Node.js Tag */}
               <Tag
@@ -455,7 +453,7 @@ const Home = () => (
                 colorScheme="gray"
               >
                 <TagLeftIcon boxSize="15px" as={IoCodeWorking} />
-                <TagLabel> xxxxxxx Software Testing </TagLabel>
+                <TagLabel>Software Testing</TagLabel>
               </Tag>
               {/* Node.js Tag */}
             </HStack>
@@ -499,7 +497,7 @@ const Home = () => (
                   boxSize="15px"
                   as={HiOutlinePresentationChartBar}
                 />
-                <TagLabel> xxxxxxx Consulting</TagLabel>
+                <TagLabel>Consulting</TagLabel>
               </Tag>
 
               {/* Firebase Tag */}
@@ -510,7 +508,7 @@ const Home = () => (
                 colorScheme="gray"
               >
                 <TagLeftIcon boxSize="15px" as={IoGolfOutline} />
-                <TagLabel>xxxxxxx Research</TagLabel>
+                <TagLabel>Research</TagLabel>
               </Tag>
 
               {/* Node.js Tag */}
@@ -521,7 +519,7 @@ const Home = () => (
                 colorScheme="gray"
               >
                 <TagLeftIcon boxSize="15px" as={IoReader} />
-                <TagLabel> xxxxxxx Presentation</TagLabel>
+                <TagLabel>Presentation</TagLabel>
               </Tag>
             </HStack>
             <br></br>
