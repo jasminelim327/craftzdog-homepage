@@ -1,4 +1,5 @@
-import { Container, Heading, SimpleGrid,Text, Box, Image  } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, Text, Box, Image, Link, Button } from '@chakra-ui/react'
+import { IoLogoGithub, IoApps } from 'react-icons/io5'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
@@ -130,6 +131,107 @@ const Works = () => (
           </WorkGridItem>
         </Section>
       </SimpleGrid> */}
+
+      <Section delay={0.4}>
+        <Heading as="h3" fontSize={20} mt={6} mb={2}>
+          🤖 AI &amp; Bots
+        </Heading>
+        <Text fontSize={14} color="gray.500" mb={4}>
+          Personal projects exploring AI-powered tools and automation
+        </Text>
+      </Section>
+
+      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+        <Section delay={0.5}>
+          <Box w="100%">
+            <Box
+              h="160px"
+              borderRadius="lg"
+              bg="linear-gradient(135deg, #1a3a1a, #0d2e0d)"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              fontSize="56px"
+              mb={3}
+            >
+              🐾
+            </Box>
+            <Text fontSize={16} fontWeight="bold" mb={1}>
+              Fluffy Fiesta Bot
+            </Text>
+            <Text fontSize={14} mb={2}>
+              A multi-integration personal assistant chatbot connecting Google
+              Calendar, Notion, Slack, and Telegram for unified daily task and
+              scheduling management.
+            </Text>
+            <Link href="https://github.com/jasminelim327/fluffy-fiesta" isExternal>
+              <Button size="sm" variant="outline" colorScheme="teal" leftIcon={<IoLogoGithub />}>
+                GitHub
+              </Button>
+            </Link>
+          </Box>
+        </Section>
+
+        <Section delay={0.5}>
+          <Box w="100%">
+            <Box
+              h="160px"
+              borderRadius="lg"
+              bg="linear-gradient(135deg, #2a1a3a, #1a0d2e)"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              fontSize="56px"
+              mb={3}
+            >
+              ✨
+            </Box>
+            <Text fontSize={16} fontWeight="bold" mb={1}>
+              Astrology Bot
+            </Text>
+            <Text fontSize={14} mb={2}>
+              A daily newsletter bot that delivers personalised cosmic insights and
+              productivity alignment tips — helping users channel their energy
+              intentionally each day.
+            </Text>
+            <Link href="https://github.com/jasminelim327/astrology-bot" isExternal>
+              <Button size="sm" variant="outline" colorScheme="purple" leftIcon={<IoLogoGithub />}>
+                GitHub
+              </Button>
+            </Link>
+          </Box>
+        </Section>
+
+        <Section delay={0.5}>
+          <Box w="100%">
+            <Box
+              h="160px"
+              borderRadius="lg"
+              bg="linear-gradient(135deg, #1a2a3a, #0d1e2e)"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              fontSize="56px"
+              mb={3}
+            >
+              🎯
+            </Box>
+            <Text fontSize={16} fontWeight="bold" mb={1}>
+              Interview Prep
+            </Text>
+            <Text fontSize={14} mb={2}>
+              A gamified interview prep platform with XP-based progression, mock AI
+              interviews powered by Claude, and a 16-week FAANG roadmap — built on
+              focus, not willpower.
+            </Text>
+            <Link href="https://interview-prep-dgb.pages.dev/" isExternal>
+              <Button size="sm" variant="outline" colorScheme="blue" leftIcon={<IoApps />}>
+                Live Demo
+              </Button>
+            </Link>
+          </Box>
+        </Section>
+      </SimpleGrid>
     </Container>
   </Layout>
 )
