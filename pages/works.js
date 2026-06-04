@@ -134,7 +134,7 @@ const Works = () => (
 
       <Section delay={0.4}>
         <Heading as="h3" fontSize={20} mt={6} mb={2}>
-          🤖 AI &amp; Bots
+          🤖 AI & Bots
         </Heading>
         <Text fontSize={14} color="gray.500" mb={4}>
           Personal projects exploring AI-powered tools and automation
@@ -194,14 +194,10 @@ const Works = () => (
               productivity alignment tips — helping users channel their energy
               intentionally each day.
             </Text>
-            <Link href="https://github.com/jasminelim327/astrology-bot" isExternal>
-              <Button size="sm" variant="outline" colorScheme="purple" leftIcon={<IoLogoGithub />}>
-                GitHub
-              </Button>
-            </Link>
           </Box>
         </Section>
 
+        <Box gridColumn={['span 1', 'span 1', 'span 2']}>
         <Section delay={0.5}>
           <Box w="100%">
             <Box
@@ -231,6 +227,7 @@ const Works = () => (
             </Link>
           </Box>
         </Section>
+        </Box>
       </SimpleGrid>
     </Container>
   </Layout>
