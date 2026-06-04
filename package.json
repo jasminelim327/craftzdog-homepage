@@ -12,6 +12,9 @@
   "keywords": [],
   "author": "Jasmine Lim",
   "license": "MIT",
+  "engines": {
+    "node": ">=20.x"
+  },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.8",
     "@chakra-ui/react": "^2.8.1",
