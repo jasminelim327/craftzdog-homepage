@@ -1,10 +1,13 @@
+import { useState } from 'react'
 import {
   Box,
-  HStack,
+  Wrap,
+  WrapItem,
   Text,
   Tag,
   TagLeftIcon,
   TagLabel,
+  Button,
   useColorModeValue,
   chakra,
 } from '@chakra-ui/react'
@@ -14,21 +17,8 @@ const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop),
 })
 
-/**
- * ExperienceEntry — one row in the vertical timeline.
- *
- * Props:
- *   logoSrc      {string|null}  Image path (e.g. "/images/onloop.jpeg"). Pass null to use logoEmoji.
- *   logoEmoji    {string}       Fallback emoji shown when logoSrc is null.
- *   isLatest     {boolean}      True for the most recent entry — renders a teal dot.
- *   isLast       {boolean}      True for the last entry — hides the connecting line.
- *   role         {string}       Job title.
- *   company      {string}       Company name / display label.
- *   dateRange    {string}       e.g. "Sep 2024 – Feb 2026"
- *   description  {string}       Free-text body.
- *   techTags     {Array<{label, colorScheme, icon}>}
- *   skillTags    {Array<{label, icon}>}
- */
+const TRUNCATE_AT = 280
+
 const ExperienceEntry = ({
   logoSrc = null,
   logoEmoji = '🏢',
@@ -41,14 +31,19 @@ const ExperienceEntry = ({
   techTags = [],
   skillTags = [],
 }) => {
+  const [expanded, setExpanded] = useState(false)
+
   const dotColor = isLatest ? 'teal.400' : 'gray.600'
   const lineColor = useColorModeValue('gray.300', 'gray.700')
-  // Call both unconditionally (Rules of Hooks), then pick based on isLatest
   const tealCompanyColor = useColorModeValue('teal.600', 'teal.300')
   const grayCompanyColor = useColorModeValue('gray.500', 'gray.400')
   const companyColor = isLatest ? tealCompanyColor : grayCompanyColor
   const logoBg = useColorModeValue('gray.100', 'gray.700')
   const sectionLabelColor = useColorModeValue('gray.500', 'gray.400')
+
+  const isLong = description && description.length > TRUNCATE_AT
+  const displayedDescription =
+    isLong && !expanded ? description.slice(0, TRUNCATE_AT) + '…' : description
 
   return (
     <Box display="flex" gap={0} mb={isLast ? 0 : 4}>
@@ -76,7 +71,7 @@ const ExperienceEntry = ({
 
       {/* Content */}
       <Box flex={1} pb={isLast ? 0 : 6}>
-        {/* Header: logo + role + company/date */}
+        {/* Header */}
         <Box display="flex" alignItems="center" gap={3} mb={3}>
           <Box
             w="44px"
@@ -91,12 +86,7 @@ const ExperienceEntry = ({
             fontSize="22px"
           >
             {logoSrc ? (
-              <ProfileImage
-                src={logoSrc}
-                alt={company}
-                width="44px"
-                height="44px"
-              />
+              <ProfileImage src={logoSrc} alt={company} width="44px" height="44px" />
             ) : (
               logoEmoji
             )}
@@ -111,10 +101,21 @@ const ExperienceEntry = ({
           </Box>
         </Box>
 
-        {/* Description */}
-        <Text fontSize="sm" mb={4} lineHeight={1.7}>
-          {description}
+        {/* Description with read-more */}
+        <Text fontSize="sm" mb={isLong ? 1 : 4} lineHeight={1.7}>
+          {displayedDescription}
         </Text>
+        {isLong && (
+          <Button
+            size="xs"
+            variant="link"
+            colorScheme="teal"
+            mb={4}
+            onClick={() => setExpanded(e => !e)}
+          >
+            {expanded ? 'Show less' : 'Show more'}
+          </Button>
+        )}
 
         {/* Tech Stack */}
         {techTags.length > 0 && (
@@ -129,21 +130,16 @@ const ExperienceEntry = ({
             >
               Tech Stack
             </Text>
-            <HStack spacing={2} flexWrap="wrap">
+            <Wrap spacing={2}>
               {techTags.map(({ label, colorScheme, icon: Icon }) => (
-                <Tag
-                  key={label}
-                  size="sm"
-                  variant="solid"
-                  borderRadius="full"
-                  colorScheme={colorScheme}
-                  mb={1}
-                >
-                  {Icon && <TagLeftIcon boxSize="13px" as={Icon} />}
-                  <TagLabel>{label}</TagLabel>
-                </Tag>
+                <WrapItem key={label}>
+                  <Tag size="sm" variant="solid" borderRadius="full" colorScheme={colorScheme}>
+                    {Icon && <TagLeftIcon boxSize="13px" as={Icon} />}
+                    <TagLabel>{label}</TagLabel>
+                  </Tag>
+                </WrapItem>
               ))}
-            </HStack>
+            </Wrap>
           </Box>
         )}
 
@@ -160,21 +156,16 @@ const ExperienceEntry = ({
             >
               Skills
             </Text>
-            <HStack spacing={2} flexWrap="wrap">
+            <Wrap spacing={2}>
               {skillTags.map(({ label, icon: Icon }) => (
-                <Tag
-                  key={label}
-                  size="sm"
-                  variant="solid"
-                  borderRadius="full"
-                  colorScheme="gray"
-                  mb={1}
-                >
-                  {Icon && <TagLeftIcon boxSize="13px" as={Icon} />}
-                  <TagLabel>{label}</TagLabel>
-                </Tag>
+                <WrapItem key={label}>
+                  <Tag size="sm" variant="solid" borderRadius="full" colorScheme="gray">
+                    {Icon && <TagLeftIcon boxSize="13px" as={Icon} />}
+                    <TagLabel>{label}</TagLabel>
+                  </Tag>
+                </WrapItem>
               ))}
-            </HStack>
+            </Wrap>
           </Box>
         )}
       </Box>
