@@ -1,5 +1,6 @@
-import { Container, Heading, SimpleGrid, Text, Box, Image, Link, Button } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, Text, Box, Link, Button } from '@chakra-ui/react'
 import { IoLogoGithub, IoApps } from 'react-icons/io5'
+import NextLink from 'next/link'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
@@ -76,29 +77,6 @@ const Works = () => (
             A Flutter-based mobile application aimed at enhancing the accessibility of public donations for non-profit organizations (NPOs)
           </WorkGridItem>
         </Section>
-        <Section delay={0.3}>
-
-        <br/>
-        <Heading as="h3" fontSize={20} mb={4}>
-        🔥  Up and Coming!
-        </Heading>
-
-        <Box w="100%" textAlign="center">
-        <Image
-          src="images/works/styly_eyecatch.png"
-          alt={'buddy'}
-          className="grid-item-thumbnail"
-          placeholder="blur"
-        />
-          <Text mt={2} fontSize={20}>
-            buddy
-          </Text>
-        <Text fontSize={14}> An AI-powered journaling app designed to help users analyze their feelings and provide personalized recommendations to improve their well-being
-        </Text>
-  </Box>
-          {/* <WorkGridItem id="buddy" thumbnail={thumbStyly} title="buddy">
-          </WorkGridItem> */}
-        </Section>
       </SimpleGrid>
 
       {/* <Section delay={0.4}>
@@ -156,9 +134,11 @@ const Works = () => (
             >
               🐾
             </Box>
-            <Text fontSize={16} fontWeight="bold" mb={1}>
-              Fluffy Fiesta Bot
-            </Text>
+            <NextLink href="/works/fluffy-fiesta" passHref>
+              <Text fontSize={16} fontWeight="bold" mb={1} cursor="pointer" _hover={{ textDecoration: 'underline' }}>
+                Fluffy Fiesta Bot
+              </Text>
+            </NextLink>
             <Text fontSize={14} mb={2}>
               A multi-integration personal assistant chatbot connecting Google
               Calendar, Notion, Slack, and Telegram for unified daily task and
@@ -186,9 +166,11 @@ const Works = () => (
             >
               ✨
             </Box>
-            <Text fontSize={16} fontWeight="bold" mb={1}>
-              Astrology Bot
-            </Text>
+            <NextLink href="/works/astrology-bot" passHref>
+              <Text fontSize={16} fontWeight="bold" mb={1} cursor="pointer" _hover={{ textDecoration: 'underline' }}>
+                Astrology Bot
+              </Text>
+            </NextLink>
             <Text fontSize={14} mb={2}>
               A daily newsletter bot that delivers personalised cosmic insights and
               productivity alignment tips — helping users channel their energy
@@ -212,9 +194,11 @@ const Works = () => (
             >
               🎯
             </Box>
-            <Text fontSize={16} fontWeight="bold" mb={1}>
-              Interview Prep
-            </Text>
+            <NextLink href="/works/interview-prep" passHref>
+              <Text fontSize={16} fontWeight="bold" mb={1} cursor="pointer" _hover={{ textDecoration: 'underline' }}>
+                Interview Prep
+              </Text>
+            </NextLink>
             <Text fontSize={14} mb={2}>
               A gamified interview prep platform with XP-based progression, mock AI
               interviews powered by Claude, and a 16-week FAANG roadmap — built on
