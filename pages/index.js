@@ -53,51 +53,93 @@ const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop),
 })
 
+const SectionLabel = ({ children }) => {
+  const color = useColorModeValue('rgba(0,0,0,0.38)', 'rgba(255,255,255,0.32)')
+  return (
+    <Text
+      fontSize="10px"
+      fontWeight="bold"
+      textTransform="uppercase"
+      letterSpacing="1.5px"
+      color={color}
+      mb={3}
+      mt={5}
+    >
+      {children}
+    </Text>
+  )
+}
+
 const SkillChip = ({ icon: IconComp, label, colorScheme = 'gray' }) => (
   <WrapItem>
-    <Tag size="md" variant="subtle" borderRadius="full" colorScheme={colorScheme} px={3} py={1}>
-      {IconComp && <TagLeftIcon boxSize="14px" as={IconComp} />}
-      <TagLabel fontSize="xs">{label}</TagLabel>
+    <Tag size="sm" variant="subtle" borderRadius="full" colorScheme={colorScheme} px={2}>
+      {IconComp && <TagLeftIcon boxSize="11px" as={IconComp} />}
+      <TagLabel fontSize="10px">{label}</TagLabel>
     </Tag>
   </WrapItem>
 )
 
 const Home = () => {
-  const cardBg = useColorModeValue('whiteAlpha.600', 'whiteAlpha.100')
-  const heroBg = useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')
-  const borderColor = useColorModeValue('gray.200', 'whiteAlpha.200')
-  const subtitleColor = useColorModeValue('gray.600', 'gray.400')
+  const heroBg = useColorModeValue('rgba(0,0,0,0.04)', 'rgba(255,255,255,0.05)')
+  const heroBorder = useColorModeValue('rgba(0,0,0,0.08)', 'rgba(255,255,255,0.08)')
+  const cardBg = useColorModeValue('rgba(0,0,0,0.02)', 'rgba(255,255,255,0.03)')
+  const cardBorder = useColorModeValue('rgba(0,0,0,0.07)', 'rgba(255,255,255,0.07)')
+  const tealAccentBg = useColorModeValue('rgba(13,148,136,0.06)', 'rgba(13,148,136,0.1)')
+  const tealAccentBorder = useColorModeValue('rgba(13,148,136,0.2)', 'rgba(13,148,136,0.25)')
+  const subtitleColor = useColorModeValue('rgba(0,0,0,0.4)', 'rgba(255,255,255,0.35)')
+  const descColor = useColorModeValue('gray.700', 'gray.300')
+  const nameGradient = useColorModeValue(
+    'linear-gradient(90deg, #111 0%, #0d9488 100%)',
+    'linear-gradient(90deg, #fff 0%, #0d9488 100%)'
+  )
 
   return (
     <Layout>
       <Container>
+
         {/* Hero banner */}
         <Box
-          borderRadius="lg"
+          borderRadius="xl"
           my={6}
           p={3}
           textAlign="center"
           bg={heroBg}
+          border="1px solid"
+          borderColor={heroBorder}
+          fontSize="sm"
           css={{ backdropFilter: 'blur(10px)' }}
         >
           Hello, I&apos;m a software engineer based in Singapore!
         </Box>
 
-        {/* Name + subtitle + resume */}
-        <Box display={{ md: 'flex' }} alignItems="center">
+        {/* Name + subtitle + CV */}
+        <Box display={{ md: 'flex' }} alignItems="center" mb={2}>
           <Box flexGrow={1}>
-            <Heading as="h2" variant="page-title">
+            <Heading
+              as="h2"
+              fontSize={28}
+              fontWeight={800}
+              letterSpacing="-0.5px"
+              lineHeight={1.2}
+              mb={2}
+              sx={{
+                background: nameGradient,
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
               Jasmine Lim Jia Yi
             </Heading>
-            <Text fontSize="sm" color={subtitleColor} mb={3}>
-              Full-Stack Software Engineer · Singapore
+            <Text fontSize="xs" color={subtitleColor} letterSpacing="0.5px" mb={4}>
+              FULL-STACK SOFTWARE ENGINEER · SINGAPORE
             </Text>
             <Link href="https://www.linkedin.com/in/jasmine-lim-jia-yi/" isExternal>
               <Button
                 size="sm"
-                colorScheme="teal"
                 variant="outline"
+                colorScheme="teal"
                 leftIcon={<IoDownloadOutline />}
+                borderRadius="md"
               >
                 Download CV
               </Button>
@@ -105,16 +147,18 @@ const Home = () => {
           </Box>
           <Box
             flexShrink={0}
-            mt={{ base: 4, md: 0 }}
+            mt={{ base: 6, md: 0 }}
             ml={{ md: 6 }}
             textAlign="center"
           >
             <Box
-              w="100px"
-              h="100px"
+              w="90px"
+              h="90px"
               display="inline-block"
               borderRadius="full"
               overflow="hidden"
+              border="2px solid"
+              borderColor={tealAccentBorder}
             >
               <ProfileImage
                 src="/images/jasmine.jpg"
@@ -129,9 +173,7 @@ const Home = () => {
 
         {/* Introduction */}
         <Section delay={0.1}>
-          <Heading as="h3" variant="section-title">
-            INTRODUCTION
-          </Heading>
+          <SectionLabel>About</SectionLabel>
           <Paragraph>
             Hello, I&apos;m Jasmine — a software engineer with close to 2 years of
             professional experience building production-grade applications. I majored
@@ -145,77 +187,75 @@ const Home = () => {
 
         {/* Skills */}
         <Section delay={0.15}>
-          <Heading as="h3" variant="section-title">
-            SKILLS
-          </Heading>
-          <Box mt={3}>
-            <Text fontSize="xs" fontWeight="bold" textTransform="uppercase" letterSpacing="0.5px" color={subtitleColor} mb={2}>
-              Frontend
-            </Text>
-            <Wrap spacing={2} mb={4}>
-              <SkillChip icon={SiReact} label="React" colorScheme="teal" />
-              <SkillChip icon={SiTypescript} label="TypeScript" colorScheme="blue" />
-              <SkillChip icon={TbBrandNextjs} label="Next.js" colorScheme="gray" />
-              <SkillChip icon={IoLogoVue} label="Vue.js" colorScheme="green" />
-            </Wrap>
+          <SectionLabel>Skills</SectionLabel>
 
-            <Text fontSize="xs" fontWeight="bold" textTransform="uppercase" letterSpacing="0.5px" color={subtitleColor} mb={2}>
-              Backend
-            </Text>
-            <Wrap spacing={2} mb={4}>
-              <SkillChip icon={IoLogoNodejs} label="Node.js" colorScheme="green" />
-              <SkillChip icon={SiNestjs} label="NestJS" colorScheme="red" />
-              <SkillChip icon={FaJava} label="Java" colorScheme="orange" />
-              <SkillChip icon={BiLogoSpringBoot} label="Spring Boot" colorScheme="green" />
-            </Wrap>
+          <Text fontSize="10px" fontWeight="semibold" color={subtitleColor} mb={2} letterSpacing="0.5px">
+            Frontend
+          </Text>
+          <Wrap spacing={1} mb={4}>
+            <SkillChip icon={SiReact} label="React" colorScheme="teal" />
+            <SkillChip icon={SiTypescript} label="TypeScript" colorScheme="blue" />
+            <SkillChip icon={TbBrandNextjs} label="Next.js" colorScheme="gray" />
+            <SkillChip icon={IoLogoVue} label="Vue.js" colorScheme="green" />
+          </Wrap>
 
-            <Text fontSize="xs" fontWeight="bold" textTransform="uppercase" letterSpacing="0.5px" color={subtitleColor} mb={2}>
-              Data &amp; Cloud
-            </Text>
-            <Wrap spacing={2} mb={4}>
-              <SkillChip icon={IoLogoFirebase} label="Firebase" colorScheme="yellow" />
-              <SkillChip icon={SiPostgresql} label="PostgreSQL" colorScheme="blue" />
-              <SkillChip icon={SiGraphql} label="GraphQL" colorScheme="pink" />
-            </Wrap>
+          <Text fontSize="10px" fontWeight="semibold" color={subtitleColor} mb={2} letterSpacing="0.5px">
+            Backend
+          </Text>
+          <Wrap spacing={1} mb={4}>
+            <SkillChip icon={IoLogoNodejs} label="Node.js" colorScheme="green" />
+            <SkillChip icon={SiNestjs} label="NestJS" colorScheme="red" />
+            <SkillChip icon={FaJava} label="Java" colorScheme="orange" />
+            <SkillChip icon={BiLogoSpringBoot} label="Spring Boot" colorScheme="green" />
+          </Wrap>
 
-            <Text fontSize="xs" fontWeight="bold" textTransform="uppercase" letterSpacing="0.5px" color={subtitleColor} mb={2}>
-              Testing &amp; Practices
-            </Text>
-            <Wrap spacing={2}>
-              <SkillChip icon={SiJest} label="Jest" colorScheme="purple" />
-              <SkillChip icon={IoRepeatOutline} label="Agile / Scrum" colorScheme="gray" />
-              <SkillChip icon={IoCodeWorking} label="CI/CD" colorScheme="gray" />
-              <SkillChip icon={IoApps} label="Full Stack Dev" colorScheme="gray" />
-            </Wrap>
-          </Box>
+          <Text fontSize="10px" fontWeight="semibold" color={subtitleColor} mb={2} letterSpacing="0.5px">
+            Data &amp; Cloud
+          </Text>
+          <Wrap spacing={1} mb={4}>
+            <SkillChip icon={IoLogoFirebase} label="Firebase" colorScheme="yellow" />
+            <SkillChip icon={SiPostgresql} label="PostgreSQL" colorScheme="blue" />
+            <SkillChip icon={SiGraphql} label="GraphQL" colorScheme="pink" />
+          </Wrap>
+
+          <Text fontSize="10px" fontWeight="semibold" color={subtitleColor} mb={2} letterSpacing="0.5px">
+            Testing &amp; Practices
+          </Text>
+          <Wrap spacing={1}>
+            <SkillChip icon={SiJest} label="Jest" colorScheme="purple" />
+            <SkillChip icon={IoRepeatOutline} label="Agile / Scrum" colorScheme="gray" />
+            <SkillChip icon={IoCodeWorking} label="CI/CD" colorScheme="gray" />
+            <SkillChip icon={IoApps} label="Full Stack Dev" colorScheme="gray" />
+          </Wrap>
         </Section>
 
         {/* Education */}
         <Section delay={0.18}>
-          <Heading as="h3" variant="section-title">
-            EDUCATION
-          </Heading>
+          <SectionLabel>Education</SectionLabel>
           <Box
-            mt={4}
             p={4}
-            borderRadius="lg"
-            border="1px"
-            borderColor={borderColor}
             bg={cardBg}
+            border="1px solid"
+            borderColor={cardBorder}
+            borderRadius="xl"
             display="flex"
-            gap={4}
+            gap={3}
             alignItems="flex-start"
+            transition="border-color 0.2s"
+            _hover={{ borderColor: useColorModeValue('rgba(0,0,0,0.15)', 'rgba(255,255,255,0.15)') }}
           >
             <Box
-              w="44px"
-              h="44px"
+              w="40px"
+              h="40px"
               borderRadius="lg"
-              bg={useColorModeValue('teal.50', 'teal.900')}
+              bg={tealAccentBg}
+              border="1px solid"
+              borderColor={tealAccentBorder}
               display="flex"
               alignItems="center"
               justifyContent="center"
               flexShrink={0}
-              fontSize="22px"
+              fontSize="18px"
             >
               🎓
             </Box>
@@ -223,41 +263,26 @@ const Home = () => {
               <Text fontWeight="bold" fontSize="sm">
                 Singapore Management University
               </Text>
-              <Text fontSize="xs" color={subtitleColor} mb={1}>
+              <Text fontSize="xs" color={subtitleColor} mb={2}>
                 B.Sc. Information Systems (Digital Cloud Solutioning &amp; FinTech) · Finance · Class of 2024
               </Text>
-              <Wrap spacing={2} mt={2}>
-                <WrapItem>
-                  <Tag size="sm" colorScheme="teal" borderRadius="full" variant="subtle">
-                    <TagLabel>Cloud Computing</TagLabel>
-                  </Tag>
-                </WrapItem>
-                <WrapItem>
-                  <Tag size="sm" colorScheme="teal" borderRadius="full" variant="subtle">
-                    <TagLabel>FinTech</TagLabel>
-                  </Tag>
-                </WrapItem>
-                <WrapItem>
-                  <Tag size="sm" colorScheme="teal" borderRadius="full" variant="subtle">
-                    <TagLabel>Finance</TagLabel>
-                  </Tag>
-                </WrapItem>
-                <WrapItem>
-                  <Tag size="sm" colorScheme="teal" borderRadius="full" variant="subtle">
-                    <TagLabel>Software Engineering</TagLabel>
-                  </Tag>
-                </WrapItem>
+              <Wrap spacing={1}>
+                {['Cloud Computing', 'FinTech', 'Finance', 'Software Engineering'].map(t => (
+                  <WrapItem key={t}>
+                    <Tag size="sm" colorScheme="teal" borderRadius="full" variant="subtle">
+                      <TagLabel fontSize="10px">{t}</TagLabel>
+                    </Tag>
+                  </WrapItem>
+                ))}
               </Wrap>
             </Box>
           </Box>
         </Section>
 
-        {/* Professional Experience */}
+        {/* Experience */}
         <Section delay={0.2}>
-          <Heading as="h5" variant="section-title">
-            PROFESSIONAL EXPERIENCE
-          </Heading>
-          <Box mt={6}>
+          <SectionLabel>Professional Experience</SectionLabel>
+          <Box mt={2}>
 
             <ExperienceEntry
               logoSrc={null}
@@ -368,22 +393,19 @@ const Home = () => {
 
         {/* Get in Touch */}
         <Section delay={0.3}>
-          <Heading as="h3" variant="section-title">
-            GET IN TOUCH
-          </Heading>
+          <SectionLabel>Get in Touch</SectionLabel>
           <Box
-            mt={4}
             p={5}
-            borderRadius="lg"
-            border="1px"
-            borderColor={borderColor}
-            bg={cardBg}
+            bg={tealAccentBg}
+            border="1px solid"
+            borderColor={tealAccentBorder}
+            borderRadius="xl"
           >
             <Box display="flex" alignItems="center" gap={2} mb={1}>
               <IoChatbubblesOutline />
-              <Text fontWeight="bold" fontSize="sm">Open to opportunities</Text>
+              <Text fontWeight="bold" fontSize="sm">Open to opportunities ✦</Text>
             </Box>
-            <Text fontSize="sm" color={subtitleColor} mb={4}>
+            <Text fontSize="sm" color={descColor} mb={4}>
               Feel free to reach out for full-time roles, collaborations, or just a chat!
             </Text>
             <List spacing={1}>
@@ -411,6 +433,7 @@ const Home = () => {
             </List>
           </Box>
         </Section>
+
       </Container>
     </Layout>
   )
